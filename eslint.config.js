@@ -1,29 +1,50 @@
 import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import { defineConfig, globalIgnores } from 'eslint/config'
+import reactPlugin from 'eslint-plugin-react'
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
+import { FlatCompat } from '@eslint/eslintrc'
 
-export default defineConfig([
-  globalIgnores(['dist']),
+const compat = new FlatCompat()
+
+export default [
+  js.configs.recommended,
+  ...compat.config({
+    extends: [
+      'plugin:react/recommended',
+      'plugin:react/jsx-runtime',
+      'plugin:react-hooks/recommended',
+    ],
+  }),
+  {
+    ignores: ['dist', 'node_modules'],
+  },
   {
     files: ['**/*.{js,jsx}'],
-    extends: [
-      js.configs.recommended,
-      reactHooks.configs['recommended-latest'],
-      reactRefresh.configs.vite,
-    ],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
       parserOptions: {
         ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
         sourceType: 'module',
+        ecmaFeatures: { jsx: true },
       },
     },
+    plugins: {
+      react: reactPlugin, // Cập nhật thành đối tượng thay vì chuỗi
+      'react-hooks': reactHooksPlugin, // Cập nhật thành đối tượng thay vì chuỗi
+    },
     rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      'react/jsx-no-target-blank': 'warn',
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+      'react/prop-types': 'off',
+      'no-unused-vars': 'warn',
+      'no-console': 'warn',
+      semi: ['warn', 'never'],
+      quotes: ['warn', 'single'],
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
     },
   },
-])
+]
