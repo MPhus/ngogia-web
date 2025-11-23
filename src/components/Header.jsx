@@ -37,7 +37,7 @@ function Header() {
 			mb: '80px',
 			right: '0',
 			top: '0',
-			p: '20px 0',
+			p: '20px 40px',
 			zIndex: '99',
 			overflow: 'hidden',
 			boxShadow: '0px -12px 16px 8px #ccc',
