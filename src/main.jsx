@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom'
 import ScrollToTop from '~/untils/ScrollToTopComponent/ScrollToTop'
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
-// import { Provider } from 'react-redux'
-// import { store } from '~/redux/store'
+import { Provider } from 'react-redux'
+import { store } from '~/redux/store'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import App from './App'
@@ -16,12 +16,12 @@ import { FUTURE_REACT_ROUTER_DOM } from '~/untils/contant.js'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter future={FUTURE_REACT_ROUTER_DOM}>
     <ThemeProvider theme={theme}>
-      {/* <Provider store={store}> */}
-      <CssBaseline />
-      <ScrollToTop />
-      <App />
-      <ToastContainer position="bottom-left" icon={false} theme="light" limit={3} />
-      {/* </Provider> */}
+      <Provider store={store}>
+        <CssBaseline />
+        <ScrollToTop />
+        <App />
+        <ToastContainer position="bottom-left" icon={false} theme="light" limit={3} />
+      </Provider>
     </ThemeProvider>
   </BrowserRouter>
 )

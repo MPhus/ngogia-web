@@ -13,9 +13,9 @@ const theme = createTheme({
 	},
 	palette: {
 		primary: {
-			main: '#f3b7c1',
-			dark: '#efb0bb',
-			contrastText: '#000'
+			main: '#ca1a75',
+			dark: '#eeb7cd',
+			contrastText: '#1f1c17'
 		},
 		secondary: {
 			main: '#ffc0cb',
@@ -23,7 +23,7 @@ const theme = createTheme({
 			contrastText: '#000'
 		},
 		text: {
-			primary: '#000'
+			primary: '#333'
 		},
 		background: {
 			default: '#fff',
@@ -31,7 +31,7 @@ const theme = createTheme({
 		}
 	},
 	typography: {
-		fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+		fontFamily: '"Nunito", "Helvetica", "Arial", sans-serif',
 		fontCustom: '"Anek Odia", sans-serif',
 		fontPE: '"Playwrite PE", cursive'
 	},
