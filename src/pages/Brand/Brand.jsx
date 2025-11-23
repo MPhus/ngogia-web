@@ -28,7 +28,7 @@ function Brand({ info }) {
 			<Header />
 			<Slide data={slide} />
 
-			<Box sx={{ minWidth: '1600px', maxWidth: '1600px', m: '0 auto 80px' }}>
+			<Box sx={{ minWidth: '1200px', maxWidth: '1200px', m: '0 auto 80px' }}>
 				<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: '20px' }}>
 					<Typography variant="h2" sx={{ fontWeight: 'bold', color: 'primary.main' }}>Các nhãn hàng của chúng tôi</Typography>
 				</Box>

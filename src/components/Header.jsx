@@ -66,8 +66,6 @@ function Header() {
 			<Box sx={{
 				display: 'flex',
 				alignItems: 'center',
-				maxWidth: '1680px',
-				minWidth: '1680px',
 				margin: '0 auto'
 			}}>
 				<Box sx={{

@@ -44,7 +44,7 @@ function ProductList({ products }) {
 			<Box sx={{
 				maxWidth: {
 					md: '1000px',
-					lg: '1600px'
+					lg: '1200px'
 				},
 				'& a': {
 					textDecoration: 'none'

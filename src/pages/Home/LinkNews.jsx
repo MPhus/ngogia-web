@@ -8,7 +8,7 @@ import { isEmpty } from "lodash"
 function LinkNews({ inBlogsPage, dataList }) {
 	const navigate = useNavigate()
 
-	return <Box sx={{ minWidth: '1600px', maxWidth: '1600px', m: '0 auto', padding: '80px 0' }}>
+	return <Box sx={{ minWidth: '1200px', maxWidth: '1200px', m: '0 auto', padding: '80px 0' }}>
 		<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: '20px' }}>
 			<Typography variant="h2" sx={{}}>Tin tức mới nhất</Typography>
 

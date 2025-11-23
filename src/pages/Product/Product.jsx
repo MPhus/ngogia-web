@@ -71,7 +71,7 @@ function Product({ brandId, info }) {
 			<Box sx={{
 				maxWidth: {
 					md: '800px',
-					lg: '1600px'
+					lg: '1200px'
 				},
 				margin: '20px auto 0',
 			}}>
@@ -138,7 +138,7 @@ function Product({ brandId, info }) {
 				bgcolor: '#FFF',
 				maxWidth: {
 					md: '800px',
-					lg: '1600px'
+					lg: '1200px'
 				},
 				margin: '12px auto 0',
 				display: 'flex',
@@ -307,7 +307,7 @@ function Product({ brandId, info }) {
 				defaultPage={1}
 				variant="outlined"
 				sx={{
-					maxWidth: '1600px',
+					maxWidth: '1200px',
 					margin: ' 0 auto',
 					padding: {
 						xs: '0 0 100px 0',
