@@ -39,7 +39,7 @@ function Blog_id({ info }) {
 					<Typography
 						key={index}
 						variant={block.level === 2 ? 'h4' : 'h5'}
-						sx={{ fontWeight: 700, mt: 4, mb: 2, }}
+						sx={{ fontWeight: 700, mt: 4, mb: 2, fontFamily: 'Vollkorn', }}
 					>
 						{block.value}
 					</Typography>
@@ -51,7 +51,7 @@ function Blog_id({ info }) {
 						key={index}
 						variant="body1"
 						component="p"
-						sx={{ mb: 2, textAlign: 'justify', fontSize: '1rem !important' }}
+						sx={{ mb: 2, textAlign: 'justify', fontFamily: 'Vollkorn', fontSize: '1rem !important' }}
 					>
 						{block.value}
 					</Typography>
@@ -156,7 +156,7 @@ function Blog_id({ info }) {
 					)}
 
 					{/* CONTENT */}
-					<Box sx={{ maxWidth: '800px', mx: 'auto', fontSize: '1rem !important' }}>
+					<Box sx={{ maxWidth: '800px', mx: 'auto', fontFamily: 'Vollkorn', fontSize: '1rem !important' }}>
 						{data?.content?.map((block, index) =>
 							renderContentBlock(block, index)
 						)}
