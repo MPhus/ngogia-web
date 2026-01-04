@@ -1,72 +1,71 @@
-// import axios from 'axios'
-// import { toast } from 'react-toastify'
-// import { API_ROOT } from '~/untils/contant'
-// // import { handleLogoutAPI, refreshTokenAPI } from '~/apis/index'
-// let authorizedAxiosIntance = axios.create()
+import axios from 'axios'
+import { toast } from 'react-toastify'
+import { handleLogoutAPI, refreshTokenAPI } from '~/apis/index'
+let authorizedAxiosIntance = axios.create()
 
-// authorizedAxiosIntance.defaults.timeout = 1000 * 60 * 10 * 10
+authorizedAxiosIntance.defaults.timeout = 1000 * 60 * 10 * 10
 
-// // ------Cookies-----
-// authorizedAxiosIntance.defaults.withCredentials = true
-// authorizedAxiosIntance.defaults.headers['Cache-Control'] = 'no-cache'
-// // Add a request interceptor`
-// authorizedAxiosIntance.interceptors.request.use(
-// 	(config) => {
-// 		return config
+// ------Cookies-----
+authorizedAxiosIntance.defaults.withCredentials = true
+authorizedAxiosIntance.defaults.headers['Cache-Control'] = 'no-cache'
+// Add a request interceptor`
+authorizedAxiosIntance.interceptors.request.use(
+	(config) => {
+		return config
 
-// 	}, (error) => {
-// 		return Promise.reject(error)
-// 	})
+	}, (error) => {
+		return Promise.reject(error)
+	})
 
-// // Add a response interceptor
-// let refreshTokenPromise = null
-// // authorizedAxiosIntance.interceptors.response.use((response) => {
+// Add a response interceptor
+let refreshTokenPromise = null
+authorizedAxiosIntance.interceptors.response.use((response) => {
+	return response
+}, (error) => {
+	console.log(' error: ', error)
+	if (error.response.status === 401) {
+		handleLogoutAPI().then((() => {
+			localStorage.removeItem(`userInfo`)
+			window.location.href = `/login`
+		}))
+	}
+	// refreshToken
+	const originalReqest = error.config
+	if (error.response.status === 410 && originalReqest) {
+		if (!refreshTokenPromise) {
+			const refreshToken = localStorage.getItem('refreshToken')
+			refreshTokenPromise = refreshTokenAPI(refreshToken)
+				.then((res) => {
 
-// // 	return response
-// // }, (error) => {
-// // 	if (error.response.status === 401) {
-// // 		handleLogoutAPI(slug).then((() => {
-// // 			localStorage.removeItem(`userInfo`)
-// // 			window.location.href = `/login`
-// // 		}))
-// // 	}
-// // 	// refreshToken
-// // 	const originalReqest = error.config
-// // 	if (error.response.status === 410 && originalReqest) {
-// // 		if (!refreshTokenPromise) {
-// // 			const refreshToken = localStorage.getItem('refreshToken')
-// // 			refreshTokenPromise = refreshTokenAPI(slug, refreshToken)
-// // 				.then((res) => {
+					// ----------localStorage-----------
+					const { accessToken } = res.data
+					localStorage.setItem('accessToken', accessToken)
+					res.config.headers.Authorization = `Bearer ${accessToken}`
+					// ---------------------
 
-// // 					// ----------localStorage-----------
-// // 					const { accessToken } = res.data
-// // 					localStorage.setItem('accessToken', accessToken)
-// // 					res.config.headers.Authorization = `Bearer ${accessToken}`
-// // 					// ---------------------
+				})
+				.catch((err) => {
+					handleLogoutAPI()
+						.then((() => {
+							localStorage.removeItem(`userInfo`)
+							window.location.href = `/login`
+						}))
+					return Promise.reject(err)
 
-// // 				})
-// // 				.catch((err) => {
-// // 					handleLogoutAPI(slug)
-// // 						.then((() => {
-// // 							localStorage.removeItem(`userInfo`)
-// // 							window.location.href = `/login`
-// // 						}))
-// // 					return Promise.reject(err)
-
-// // 				})
-// // 				.finally(() => {
-// // 					refreshTokenPromise = null
-// // 				})
-// // 		}
-// // 		return refreshTokenPromise.then(() => {
-// // 			return authorizedAxiosIntance(originalReqest)
-// // 		})
-// // 	}
-// // 	if (error.response?.status !== 410) {
-// // 		toast.error(error.response?.data?.message || error?.message, { position: 'top-center' })
-// // 	}
-// // 	return Promise.reject(error)
-// // })
+				})
+				.finally(() => {
+					refreshTokenPromise = null
+				})
+		}
+		return refreshTokenPromise.then(() => {
+			return authorizedAxiosIntance(originalReqest)
+		})
+	}
+	if (error.response?.status !== 410) {
+		toast.error(error.response?.data?.message || error?.message, { position: 'top-center' })
+	}
+	return Promise.reject(error)
+})
 
 
-// export default authorizedAxiosIntance
+export default authorizedAxiosIntance

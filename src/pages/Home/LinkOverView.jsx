@@ -18,8 +18,8 @@ function LinkOverView({ data }) {
 			position: 'relative'
 		}}>
 			<Box sx={{
-				minWidth: '30%',
-				maxWidth: '30%',
+				minWidth: { xs: '80%', md: '50%', xl: '40%' },
+				maxWidth: { xs: '80%', md: '50%', xl: '40%' },
 				minHeight: '80%',
 				maxHeight: '80%',
 				top: '50%',
@@ -32,13 +32,13 @@ function LinkOverView({ data }) {
 				textAlign: 'center',
 				backgroundColor: 'background.default',
 				'& .MuiTypography-root.MuiTypography-h2': {
-					fontSize: '4rem',
+					fontSize: { xs: '3rem', sm: '4rem' },
 					mb: '20px',
 					fontFamily: 'Vollkorn',
 
 				},
 				'& .MuiTypography-root.MuiTypography-body1': {
-					fontSize: '1.2rem',
+					fontSize: { xs: '1rem', sm: '1.2rem' },
 					lineHeight: '1.6',
 					color: '#97958f'
 				},
@@ -61,11 +61,11 @@ function LinkOverView({ data }) {
 				}}
 					sx={{
 						color: '#fff',
-						padding: '20px 32px',
+						padding: { xs: '12px 20px', sm: '20px 32px' },
 						fontSize: '1.2rem',
 						textTransform: 'uppercase',
 						mt: '32px',
-						minWidth: '320px',
+						minWidth: { xs: '200px', xl: '320px' },
 						justifyContent: 'space-between',
 						border: 'none',
 						backgroundColor: '#000',

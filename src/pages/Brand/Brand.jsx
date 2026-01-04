@@ -5,34 +5,87 @@ import { Box, Button, Card, CardContent, CardHeader, CardMedia, patch, Typograph
 import React, { useEffect, useState } from "react"
 import EastIcon from '@mui/icons-material/East'
 import { useNavigate } from "react-router-dom"
-import { API_GetAllBrand } from "~/apis"
-import { useSelector, useDispatch } from 'react-redux'
-import { fetchWebInfo } from "~/redux/info"
+import { API_GetAllBrand, uploadTest } from "~/apis"
+import { useForm } from "react-hook-form"
 
 function Brand({ info }) {
 	const [brandList, setBrandList] = useState([])
 	const [slide, setSlide] = useState(undefined)
-	console.log(' slide: ', slide)
 	const navigate = useNavigate()
 	useEffect((() => {
 		API_GetAllBrand().then(data => {
-			console.log(' data: ', data)
 			setBrandList(data.brandList)
 			setSlide(data.slide.thumb)
 		})
 			.catch(err => console.log('err brand: ', err)
 			)
 	}), [])
+	const handleSubmitForm = async (data) => {
+		console.log('đã click')
+
+		try {
+			const formData = new FormData()
+			for (let i = 0; i < data?.files.length; i++) {
+				formData.append("thumb", data?.files[i])
+			}
+			for (const [key, value] of formData.entries()) {
+				console.log(key, value)
+			}
+			const test = await uploadTest(formData)
+			reset()
+			console.log(' test: ', JSON.stringify(test.data))
+		} catch (error) {
+			console.log(' error: ', error)
+
+		}
+
+	}
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+		reset
+	} = useForm()
 	return (
 		<Box>
 			<Header />
 			<Slide data={slide} />
 
-			<Box sx={{ minWidth: '1200px', maxWidth: '1200px', m: '0 auto 80px' }}>
-				<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: '20px' }}>
-					<Typography variant="h2" sx={{ fontWeight: 'bold', color: 'primary.main' }}>Các nhãn hàng của chúng tôi</Typography>
+			<Box sx={{
+				maxWidth: {
+					md: '1000px',
+					lg: '1200px'
+				},
+				m: '0 auto 80px',
+			}}>
+				<Box sx={{
+					display: 'flex',
+					justifyContent: 'space-between',
+					alignItems: 'center',
+					mb: '20px'
+				}}>
+					<Typography variant="h2"
+						sx={{
+							fontWeight: 'bold',
+							color: 'primary.main',
+							p: { xs: '0 20px', sm: '0 40px', lg: '0 20px' },
+							mt: { xs: '20px', lg: 'unset' },
+							fontSize: { xs: '2rem', sm: '3rem' }
+						}}>
+						Các nhãn hàng của chúng tôi
+					</Typography>
+
 				</Box>
-				<Box sx={{ display: 'grid', gridTemplateColumns: ' repeat(4, 1fr)', gap: '40px 20px' }}>
+				<Box sx={{
+					display: 'flex',
+					justifyContent: { xs: 'space-evenly', lg: 'space-between' },
+					padding: { xs: '0 8px', sm: '0 20px' },
+					flexWrap: 'wrap',
+					maxWidth: {
+						md: '1000px',
+						lg: '1200px'
+					},
+				}}>
 					{brandList && brandList?.map((brand) => {
 						return (
 							<Card key={brand?._id}
@@ -40,6 +93,11 @@ function Brand({ info }) {
 									navigate(`/brands/${brand?._id}`)
 								}}
 								sx={{
+									minWidth: { xs: '46%', md: '30%', lg: '280px' },
+									maxWidth: { xs: '46%', md: '30%', lg: '280px' },
+									minHeight: { xs: 'unset', md: 'unset', lg: '180px' },
+									maxHeight: { xs: 'unset', md: 'unset', lg: '180px' },
+									m: { xs: '12px 0', sm: '20px 0', lg: '12px 0' },
 									'&:hover': {
 										cursor: 'pointer',
 										boxShadow: '0 0 12px 0 #ca1a75'
@@ -51,14 +109,11 @@ function Brand({ info }) {
 										borderBottom: 'none'
 									},
 									'& .MuiCardMedia-root': {
-										backgroundColor: 'primary.dark',
+										backgroundColor: 'secondary.main',
 										p: '12px 20px',
-										border: '1px solid #ca1a75',
-										borderTop: 'none'
 									}
 								}} >
-								<CardHeader
-									title={brand?.name} />
+
 								<CardMedia
 									component="img"
 									image={brand?.logo}
@@ -70,6 +125,15 @@ function Brand({ info }) {
 
 				</Box>
 			</Box>
+			{/* <form onSubmit={handleSubmit(handleSubmitForm)}>
+
+				<input
+					type="file"
+					multiple
+					{...register("files")}
+				/>
+				<button type='submit'>submit</button>
+			</form> */}
 			<Footer data={info} />
 		</Box>
 	)

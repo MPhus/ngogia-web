@@ -57,12 +57,30 @@ import EastIcon from '@mui/icons-material/East'
 // }
 
 function Slide({ data }) {
-	return <Box>
+	return <Box sx={{
+		height: {
+			xs: '464px',
+			md: 'auto'     // desktop → ảnh full
+		},
+		overflow: 'hidden',
+	}}>
 		<Box
 			component="img"
 			src={data}
 			sx={{
-				minWidth: '100%', maxWidth: '100%', mb: '40px', mt: '80px', userSelect: 'none',
+				width: '100%',
+				mb: '40px',
+				mt: '80px',
+				userSelect: 'none',
+				objectFit: {
+					xs: 'cover',
+					md: 'contain'
+				},
+				objectPosition: '50% 50%',
+				height: {
+					xs: '100%',
+					md: 'auto'
+				},
 				'&::selection': {
 					background: 'transparent'
 				}

@@ -33,8 +33,8 @@ function Product({ brandId, info }) {
 	const [slide, setSlide] = useState(undefined)
 
 	useEffect(() => {
-
-		API_getProduct(filter).then(data => setProducts(data))
+		const test = { ...filter, searchtext }
+		API_getProduct(test).then(data => setProducts(data))
 
 
 	}, [filter, searchtext])
@@ -73,25 +73,26 @@ function Product({ brandId, info }) {
 					md: '800px',
 					lg: '1200px'
 				},
+				p: { xs: '0 20px', md: 'unset', lg: '0 20px' },
 				margin: '20px auto 0',
+				display: { xs: 'flex', sm: 'block' },
+				gap: { xs: '20px', sm: 'unset' }
 			}}>
 				<TextField
 					id="filled-search"
 					label="Tìm kiếm"
 					type="text"
 					variant="outlined"
-
+					size='small'
 					fullWidth
 					onChange={(e) => {
 						setSearchtext(e.target.value)
-						setFilter({ ...filter, searchtext: e.target.value, page: 1 })
 					}}
 					value={searchtext}
 					InputProps={{
 						startAdornment: (
 							<InputAdornment position="start">
 								<SearchIcon sx={{
-
 									fill: '#ca1a75',
 									fontSize: '24px'
 								}} />
@@ -99,7 +100,7 @@ function Product({ brandId, info }) {
 						),
 						endAdornment: (
 							<InputAdornment position="end">
-								<CloseRoundedIcon onClick={() => setCloseIcon('')}
+								<CloseRoundedIcon onClick={() => setSearchtext('')}
 									sx={{
 										display: searchtext !== '' ? 'block' : 'none',
 										cursor: 'pointer',
@@ -120,20 +121,55 @@ function Product({ brandId, info }) {
 							left: '0',
 							top: '-4px',
 							color: ' #ca1a75!important',
-							fontSize: '24px !important',
-							backgroundColor: '#fff'
+							fontSize: { xs: '18px !important', sm: '24px !important' },
+							backgroundColor: { xs: 'unset', md: '#fff' }
 						},
 						'&  .MuiOutlinedInput-root ': {
 							color: 'primary.contrastText',
-							fontSize: '20px',
+							fontSize: { xs: '18px !important', sm: '20px !important' },
 							' & .MuiOutlinedInput-notchedOutline': {
 								border: '2px solid #ca1a75 !important'
 							}
 						}
 					}}
 				/>
+				<Box sx={{
+					display: { xs: 'unset', sm: 'none' },
+					background: 'transparent',
+					'& .MuiInputBase-root': {
+						color: 'primary.main',
+						fontSize: '18px',
+						'& div': {
+							p: ' 8px 12px'
+						},
+						'& .MuiOutlinedInput-notchedOutline': {
+							border: '1px solid #000',
+							borderColor: '#000'
+						}
+					}
+				}}>
+					<FormControl
+						size='small'
+						fullWidth>
+
+						<Select
+							value={filter.price}
+							inputProps={{ MenuProps: { disableScrollLock: true } }}
+							onChange={(e) => {
+								setFilter({
+									...filter,
+									price: e.target.value, page: 1
+								})
+							}}
+						>
+							<MenuItem value={'latest'}>Bán chạy</MenuItem>
+							<MenuItem value={'increase'}>Giá tăng dần</MenuItem>
+							<MenuItem value={'decrease'}> Giá giảm dần</MenuItem>
+						</Select>
+					</FormControl>
+				</Box>
 			</Box>
-			{/* Navigationnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn */}
+
 			<Box sx={{
 				bgcolor: '#FFF',
 				maxWidth: {
@@ -142,7 +178,7 @@ function Product({ brandId, info }) {
 				},
 				margin: '12px auto 0',
 				display: 'flex',
-				pb: '20px',
+				p: { xs: ' 0 20px 20px 20px', md: ' 0 0 20px 0', lg: ' 0 20px 20px 20px' },
 				flexDirection: {
 					xs: 'column',
 					md: 'row'
@@ -157,45 +193,51 @@ function Product({ brandId, info }) {
 
 				<Box sx={{
 					display: 'flex',
+					flexDirection: { xs: 'column', sm: 'row' },
 					gap: {
-						xs: '0', lg: '20px'
+						xs: '8px', lg: '20px'
 					},
 					maxWidth: {
 						xs: '100%',
-						sm: '70%',
-						md: '500px'
+						md: '70%',
+						lg: '500px'
 					},
 					minWidth: {
 						xs: '100%',
-						sm: '70%',
-						md: '500px'
+						md: '70%',
+						lg: '500px'
 					},
+					p: { xs: '12px 0', md: 'unset' },
 					justifyContent: 'flex-start'
 				}}>
-					{/* ----------------------------------filterColor------------------------------------------------ */}
+					{/* ----------------------------------filterBRand------------------------------------------------ */}
 					<Box sx={{
 						minWidth: '30%'
 					}} >
-						<FormControl sx={{
-							minWidth: {
-								xs: '100%',
+						<FormControl
+							size='small'
+							sx={{
+								minWidth: {
+									xs: '100%',
+								},
 								'& .MuiFormLabel-root': {
 									right: 'unset !important',
 									left: '0',
 									color: ' #ca1a75!important',
 									fontSize: '18px !important',
-									backgroundColor: '#fff'
+									backgroundColor: '#fff',
+									lineHeight: { xs: 'unset' }
 								},
 								'&  .MuiOutlinedInput-root ': {
 									color: 'primary.contrastText',
 									fontSize: '18px',
 									' & .MuiOutlinedInput-notchedOutline': {
-										border: '1px solid #000 !important'
+										border: '1px solid #000 !important',
 									}
+
 								}
-							}
-						}}>
-							<InputLabel sx={{ color: 'red' }} >Nhãn hàng</InputLabel>
+							}}>
+							<InputLabel  >Nhãn hàng</InputLabel>
 							<Select
 								value={filter.brandId || ''}
 								onChange={(e) => { setFilter({ ...filter, brandId: e.target.value, page: 1 }) }}
@@ -208,19 +250,25 @@ function Product({ brandId, info }) {
 						</FormControl>
 					</Box>
 
-					{/* ----------------------------------filterSize------------------------------------------------ */}
+					{/* ----------------------------------filterUSE----------------------------------------------- */}
 					<Box sx={{
 						minWidth: '36%'
 					}}>
-						<FormControl sx={{
-							minWidth: {
-								xs: '100%',
+						<FormControl
+							size='small'
+							sx={{
+								minWidth: {
+									xs: '100%'
+								},
+
 								'& .MuiFormLabel-root': {
 									right: 'unset !important',
 									left: '0',
 									color: ' #ca1a75!important',
 									fontSize: '18px !important',
-									backgroundColor: '#fff'
+									backgroundColor: '#fff',
+
+									lineHeight: { xs: 'unset' }
 								},
 								'&  .MuiOutlinedInput-root ': {
 									color: 'primary.contrastText',
@@ -229,8 +277,7 @@ function Product({ brandId, info }) {
 										border: '1px solid #000 !important'
 									}
 								}
-							}
-						}} >
+							}} >
 							<InputLabel id="size-select-label" >Danh mục</InputLabel>
 							<Select
 								value={filter.uses}
@@ -262,7 +309,7 @@ function Product({ brandId, info }) {
 						xs: '100%',
 						md: '200px'
 					},
-					mb: '8px',
+					display: { xs: 'none', sm: 'unset' },
 					background: 'transparent',
 					'& .MuiInputBase-root': {
 						color: 'primary.main',
@@ -288,9 +335,9 @@ function Product({ brandId, info }) {
 								})
 							}}
 						>
-							<MenuItem value={'latest'}>Mới nhất</MenuItem>
-							<MenuItem value={'increase'}>Tăng dần</MenuItem>
-							<MenuItem value={'decrease'}>Giảm dần</MenuItem>
+							<MenuItem value={'latest'}>Bán chạy nhất</MenuItem>
+							<MenuItem value={'increase'}>Giá tăng dần</MenuItem>
+							<MenuItem value={'decrease'}>Giá giảm dần</MenuItem>
 						</Select>
 					</FormControl>
 				</Box>

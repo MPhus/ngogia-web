@@ -11,12 +11,13 @@ function Footer({ data }) {
 			minWidth: '100%',
 			maxWidth: '100%',
 			display: 'flex',
-			maxHeight: '860px',
-			minHeight: '860px',
+			flexDirection: { xs: 'column', md: 'row' },
+			maxHeight: { xs: 'unset', md: '860px' },
+			minHeight: { xs: 'unset', md: '860px' },
 			overflow: 'hidden',
 			'& .thumbSlide': {
-				minWidth: '50%',
-				maxWidth: '50%',
+				minWidth: { xs: 'unset', md: '50%' },
+				maxWidth: { xs: 'unset', md: '50%' },
 				objectFit: 'cover',
 				objectPosition: 'top',
 				minHeight: '100%'
@@ -26,17 +27,17 @@ function Footer({ data }) {
 			<img className="thumbSlide" src={data?.footerThumb} alt="" />
 
 			<Box sx={{
-				minWidth: '50%',
-				maxWidth: '50%',
+				minWidth: { xs: 'unset', md: '50%' },
+				maxWidth: { xs: 'unset', md: '50%' },
 				boxSizing: 'border-box'
 			}}>
 				<Box>
 					<Box sx={{
 						display: 'grid',
-						maxWidth: '60%',
-						padding: '40px 80px',
+						maxWidth: { xs: 'unset', md: '60%' },
+						padding: { xs: '40px', sm: '40px 80px', md: '40px 80px' },
 						gridTemplateColumns: 'repeat(2,auto)',
-						gap: '0 80px',
+						gap: { xs: '0 20px', sm: '0 80px', md: '0 32px', lg: '0 80px' },
 						'& a': {
 							textDecoration: 'none',
 							fontSize: '1em',
@@ -80,16 +81,16 @@ function Footer({ data }) {
 					padding: '40px 80px',
 				}}>
 					<Box sx={{
-						maxWidth: '50%',
+						maxWidth: '100%',
 						textAlign: 'justify',
 						'& .MuiTypography-root.MuiTypography-h5': {
-							fontSize: '16px',
+							fontSize: '18px',
 							fontWeight: 'bold',
-							my: '8px'
+							my: '20px'
 						},
 						'& .MuiTypography-root.MuiTypography-body1': {
-							fontSize: '12px',
-							mb: '4px'
+							fontSize: '16px',
+							my: '12px'
 						},
 					}}>
 						<Typography variant="h5">Công ty TNHH MTV Ngô Gia
@@ -102,19 +103,8 @@ function Footer({ data }) {
 						<Typography variant="body1">
 							Xin trân trọng cảm ơn và cùng nhau tiếp tục viết tiếp hành trình làm đẹp – làm nên giá trị đích thực cho cuộc sống.
 						</Typography>
-
 					</Box>
-					<Box sx={{
-						'& .bocongthuong': {
-							width: '132px',
-							my: '16px'
-						}
-					}}>
 
-						<a href="http://online.gov.vn/Home/" target="_blank">
-							<img className="bocongthuong" src="https://res.cloudinary.com/divrizdwo/image/upload/v1758980483/ministry-of-industry-n-trade.199a108_uo6cao.png" alt="" />
-						</a>
-					</Box>
 					<Typography variant="body1">© 2025 Ngo Gia Sac Ngoc. All rights reserved.</Typography>
 				</Box>
 

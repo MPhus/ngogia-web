@@ -25,7 +25,7 @@ import DialogActions from '@mui/material/DialogActions'
 import { CircularProgress } from '@mui/material'
 
 // import { getProductById } from '~/apis/mock'
-import { fetchCityAPI, API_GetProductById, API_createNewOrder } from '~/apis/index'
+import { fetchCityAPI, API_GetProductById, API_createNewOrder, API_createNewOrderNoPrice } from '~/apis/index'
 
 import CashIconBlack from '~/assets/svg/money.svg?react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -33,7 +33,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { toast } from 'react-toastify'
 
 function Checkout({ slug, webInfo }) {
-	const TRANPORT_FEE = 35
+	const TRANPORT_FEE = 0
 	const [open, setOpen] = useState(false)
 	const [openCheckmail, setOpenCheckmail] = useState({ isOpen: false })
 	const [citiesList, setCitiesList] = useState([])
@@ -79,6 +79,18 @@ function Checkout({ slug, webInfo }) {
 		const data = { info, productList, totalPrice, tranportFee: TRANPORT_FEE, type: 'online' }
 		console.log(' data: ', data)
 		API_createNewOrder(data)
+			.then((t) => {
+				setOpenCheckmail({ message: t.to[0], isOpen: true, isThen: true })
+			})
+			.catch((t) => {
+				setOpenCheckmail({ message: t.message, isOpen: true, isThen: false })
+			})
+			.finally(a => setLoading(false))
+		setLoading(true)
+	}
+	const submitLogInNoPrice = (info) => {
+		const data = { info, productList, totalPrice, type: 'online' }
+		API_createNewOrderNoPrice(data)
 			.then((t) => {
 				setOpenCheckmail({ message: t.to[0], isOpen: true, isThen: true })
 			})
@@ -140,7 +152,7 @@ function Checkout({ slug, webInfo }) {
 					<CircularProgress sx={{ color: 'primary.main' }} size={80} />
 				</Box>
 			}
-			<form onSubmit={handleSubmit(submitLogIn)}>
+			<form onSubmit={handleSubmit(!isNaN(totalPrice) ? submitLogIn : submitLogInNoPrice)}>
 				<Box sx={{
 					width: {
 						md: '100%',
@@ -152,7 +164,7 @@ function Checkout({ slug, webInfo }) {
 						md: '0 20px',
 						lg: '0'
 					},
-					m: '0 auto',
+					m: { xs: '20px auto', sm: '0 auto' },
 					display: 'flex',
 					flexDirection: {
 						xs: 'column',
@@ -228,9 +240,17 @@ function Checkout({ slug, webInfo }) {
 								{`Đơn hàng (${totalQuantity} sản phẩm)`}
 							</Button>
 
-							<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '18px !important', userSelect: 'none' }}>
-								{`${(new Intl.NumberFormat().format((totalPrice + TRANPORT_FEE) * 1000))} VND`}
-							</Typography>
+
+							{!isNaN(totalPrice)
+								?
+								<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '18px !important', userSelect: 'none' }}>
+									{`${(new Intl.NumberFormat().format((totalPrice + TRANPORT_FEE) * 1000))} VND`}
+								</Typography>
+								:
+								<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '18px !important', userSelect: 'none' }}>
+									{`Đang cập nhật`}
+								</Typography>
+							}
 
 						</Box>
 						<Box sx={{ display: open ? 'block' : 'none' }}>
@@ -291,11 +311,18 @@ function Checkout({ slug, webInfo }) {
 
 
 										</Box>
+										{!isNaN(totalPrice)
+											?
+											<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main' }}>
+												{`${new Intl.NumberFormat().format(((product.price - (product.price * (product.precent / 100))) * product.quantityInCart) * 1000)} VND`}
+											</Typography>
+											:
+											<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main' }}>
+												{`Đang cập nhật`}
+											</Typography>
+										}
 
 
-										<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main' }}>
-											{`${new Intl.NumberFormat().format(((product.price - (product.price * (product.precent / 100))) * product.quantityInCart) * 1000)} VND`}
-										</Typography>
 
 									</Box>
 								))}
@@ -303,14 +330,25 @@ function Checkout({ slug, webInfo }) {
 
 							<Box sx={{ borderBottom: '1px solid #000', pb: '20px' }}>
 
-								<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', }}>
-									<Typography variant='body1' sx={{ fontSize: '16px ! important' }}>
-										Tạm tính
-									</Typography>
-									<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '16px ! important' }}>
-										{`${(new Intl.NumberFormat().format(totalPrice * 1000))} VND`}
-									</Typography>
-								</Box>
+
+								{!isNaN(totalPrice)
+									?
+									<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', }}>
+										<Typography variant='body1' sx={{ fontSize: '16px ! important' }}>
+											Tạm tính
+										</Typography>
+
+										<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '16px ! important' }}>
+											{`${(new Intl.NumberFormat().format(totalPrice * 1000))} VND`}
+										</Typography>
+									</Box>
+									:
+									<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', }}>
+										<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '16px ! important' }}>
+											{`Đang cập nhật`}
+										</Typography>
+									</Box>
+								}
 
 								{!!TRANPORT_FEE &&
 									<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: '20px' }}>
@@ -327,17 +365,19 @@ function Checkout({ slug, webInfo }) {
 									<Typography variant='body1' sx={{ fontSize: '16px ! important', fontWeight: '700' }}>
 										Tổng cộng
 									</Typography>
-									<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '18px !important' }}>
-										{`${(new Intl.NumberFormat().format((totalPrice + TRANPORT_FEE) * 1000))} VND`}
 
-									</Typography>
+									{!isNaN(totalPrice) ?
+										<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '18px !important' }}>
+											{`${(new Intl.NumberFormat().format((totalPrice + TRANPORT_FEE) * 1000))} VND`}
+										</Typography>
+										: <Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '18px !important' }}>
+											{`Đang cập nhật`}
+										</Typography>
+									}
 								</Box>
-
 							</Box>
-
 						</Box>
 					</Box>
-
 					<Box sx={{
 						minWidth: {
 							xs: '100%',
@@ -504,7 +544,6 @@ function Checkout({ slug, webInfo }) {
 										' & .MuiOutlinedInput-notchedOutline': {
 											border: '1px solid #000 !important'
 										},
-
 									},
 								}}>
 									<TextField
@@ -745,7 +784,7 @@ function Checkout({ slug, webInfo }) {
 							sx={{
 								width: '100%',
 								backgroundColor: 'primary.main',
-								color: 'primary.main',
+								color: '#fff',
 								transition: 'all linear .3s',
 								'&:hover': {
 									backgroundColor: 'primary.main',
@@ -838,12 +877,15 @@ function Checkout({ slug, webInfo }) {
 										</Typography>
 
 									</Box>
-
-
-									<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main' }}>
-										{`${new Intl.NumberFormat().format(((product.price - (product.price * (product.precent / 100))) * product.quantityInCart) * 1000)} VND`}
-									</Typography>
-
+									{typeof product.price === 'number' ?
+										<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main' }}>
+											{`${new Intl.NumberFormat().format(((product.price - (product.price * (product.precent / 100))) * product.quantityInCart) * 1000)} VND`}
+										</Typography>
+										:
+										<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main' }}>
+											{product.price}
+										</Typography>
+									}
 								</Box>
 							))}
 						</Box>
@@ -854,12 +896,18 @@ function Checkout({ slug, webInfo }) {
 								<Typography variant='body1' sx={{ fontSize: '16px ! important' }}>
 									Tạm tính
 								</Typography>
-								<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '16px ! important' }}>
-									{`${(new Intl.NumberFormat().format(totalPrice * 1000))} VND`}
-								</Typography>
+								{!isNaN(totalPrice) ?
+									<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '16px ! important' }}>
+										{`${(new Intl.NumberFormat().format(totalPrice * 1000))} VND`}
+									</Typography> :
+									<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '16px ! important' }}>
+										{`Đang cập nhật`}
+									</Typography>
+								}
+
 							</Box>
 
-							{!!TRANPORT_FEE &&
+							{!isNaN(totalPrice) && !!TRANPORT_FEE &&
 
 								<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', }}>
 									<Typography variant='body1' sx={{ mt: '8px' }}>
@@ -879,10 +927,15 @@ function Checkout({ slug, webInfo }) {
 								<Typography variant='body1' sx={{ fontSize: '16px ! important', fontWeight: '700' }}>
 									Tổng cộng
 								</Typography>
-								<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '18px !important' }}>
-									{`${(new Intl.NumberFormat().format((totalPrice + TRANPORT_FEE) * 1000))} VND`}
 
-								</Typography>
+								{!isNaN(totalPrice) ?
+									<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '18px !important' }}>
+										{`${(new Intl.NumberFormat().format((totalPrice + TRANPORT_FEE) * 1000))} VND`}
+									</Typography> :
+									<Typography variant='body1' sx={{ fontWeight: '700', color: 'primary.main', fontSize: '18px !important' }}>
+										{`Đang cập nhật`}
+									</Typography>
+								}
 							</Box>
 							<Box sx={{
 								display: 'flex',

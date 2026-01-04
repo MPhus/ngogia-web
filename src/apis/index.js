@@ -1,4 +1,5 @@
 import axios from 'axios'
+import authorizedAxiosIntance from '~/untils/authorizedAxios'
 // import authorizedAxiosIntance from '~/untils/authorizedAxios'
 import { API_ROOT } from '~/untils/contant'
 import { API_CITY } from '~/untils/contant'
@@ -6,6 +7,15 @@ export const fetchCityAPI = async () => {
 	const response = await axios.get(`${API_CITY}`)
 	return response.data
 }
+export const handleLogoutAPI = async () => {
+	//---- cookie---
+	await authorizedAxiosIntance.delete(`${API_ROOT}/v1/users/logout`)
+	// --------
+}
+export const refreshTokenAPI = async (refreshToken) => {
+	return await authorizedAxiosIntance.put(`${API_ROOT}/v1/users/refresh_token`, { refreshToken })
+}
+
 export const API_GetHomePage = async (slug) => {
 	const response = await axios.get(`${API_ROOT}/v1/pages/${slug}`)
 	return response.data
@@ -40,6 +50,10 @@ export const API_GetProductById = async (id) => {
 }
 export const API_createNewOrder = async (data) => {
 	const response = await axios.post(`${API_ROOT}/v1/order`, data)
+	return response.data
+}
+export const API_createNewOrderNoPrice = async (data) => {
+	const response = await axios.post(`${API_ROOT}/v1/order/createNoPrice`, data)
 	return response.data
 }
 export const API_veriryOderToken = async (token) => {

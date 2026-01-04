@@ -7,13 +7,16 @@ import { BRAND_LIST_MOCK } from '~/apis/mockdata'
 import { useParams } from 'react-router-dom'
 import { API_GetBrandById, API_getProduct } from '~/apis'
 import ProductList from '../Product/ProductList'
+import useContentTruncation from '~/components/useContentTruncation'
+import OverViewInTheLeft from '~/components/OverViewInTheLeft'
+import Slide from '~/components/Slide'
 
 function Brand_id({ info }) {
 	let { id } = useParams()
-	const [data, setData] = useState({})
+	const [blogId, setBlogId] = useState({})
 	const [productList, setProductList] = useState([])
 	useEffect(() => {
-		API_GetBrandById(id).then(data => setData(data))
+		API_GetBrandById(id).then(data => setBlogId(data))
 			.catch(err => console.log('err:', err))
 	}, [])
 	useEffect(() => {
@@ -29,126 +32,19 @@ function Brand_id({ info }) {
 		}).then(data => setProductList(data))
 			.catch(err => console.log('err:', err))
 	}, [])
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-	const [isShow, setIsShow] = useState(false)
 
-	const originContent = data?.des?.split('\n')
-	const originContentLength = originContent?.length
-
-	const [contents, setContents] = useState(originContent)
-	const handleShowAllContent = () => {
-		setIsShow(false)
-		setContents(originContent)
-	}
-	useEffect(() => {
-		if (windowWidth < 1200 && originContentLength > 3) {
-			const contentsTemp = contents?.filter((t, i) => i <= 2)
-			setIsShow(true)
-			setContents(contentsTemp)
-		} else {
-			handleShowAllContent()
-		}
-	}, [windowWidth, data])
-
-	useEffect(() => {
-		const hadleResize = (event) => {
-
-			setWindowWidth(event.srcElement.innerWidth)
-		}
-		window.addEventListener('resize', hadleResize)
-		return () => {
-			window.removeEventListener('resize', hadleResize)
-		}
-	}, [])
 	return (
 		<Box>
 			<Header />
-			<Box sx={{
-				backgroundColor: 'background.default',
-				color: 'text.primary',
-				p: '40px 0',
-				mt: '80px'
-			}}>
-				<Box sx={{
-					maxWidth: {
-						xs: '100%',
-						md: '960px',
-						lg: '1200px'
-					},
-					margin: '0 auto ',
-					textAlign: 'center',
-					padding: {
-						xs: ' 0 32px',
-						md: 'none'
-					},
-					'& .MuiTypography-root.MuiTypography-h1': {
-						fontWeight: '300',
-						fontSize: {
-							xs: '28px',
-							md: '32px'
-						},
-						lineHeight: {
-							sx: '28px',
-							md: '44px'
-						},
-						letterSpacing: '4px',
-						p: {
-							xs: '20px 0',
-							md: '32px 0'
-						},
-						fontFamily: 'fontPE'
-					},
-					'& .MuiTypography-root.MuiTypography-body1': {
-						fontSize: '16px',
-						letterSpacing: '2px',
-						fontFamily: 'fontPE',
-						mb: {
-							xs: '8px',
-							md: '16px'
-						}
-					}
-				}}>
-					<Typography variant="h3">{data?.name}</Typography>
+			{
+				blogId?.thumb && <Slide data={blogId?.thumb} />
+			}
 
-					<img src={data?.logo}
-						alt=""
-						style={{
-							maxWidth: '200px',
-							marginTop: '32px'
-						}}
-					/>
-
-
-					<Box>
-						{contents?.map((content, index) => {
-							return (
-								<Typography
-									variant="body1"
-									component="p" key={index}
-								>
-									{content}
-								</Typography>
-							)
-						}
-						)}
-						{isShow && <Typography
-							variant="body1"
-							component="p"
-							onClick={() => handleShowAllContent()}
-							sx={{ cursor: 'pointer', fontWeight: 'bold' }}
-						>
-							Xem thêm
-						</Typography>}
-					</Box>
-					<img src={data?.thumb}
-						alt=""
-						style={{
-							maxWidth: '200px',
-							marginTop: '32px'
-						}}
-					/>
-
-				</Box >
+			<Box sx={{ m: blogId?.thumb ? '40px 0' : '120px 0 40px 0 ' }}>
+				{blogId?.des && blogId?.des?.map((data, index) => <Box key={data?._id} >
+					<OverViewInTheLeft data={{ ...data, logo: blogId?.logo }} isRight={index % 2} isBrand={blogId?.logo && !index % 2} />
+				</Box>
+				)}
 			</Box>
 			<Box sx={{
 				maxWidth: {
@@ -158,7 +54,14 @@ function Brand_id({ info }) {
 				},
 				margin: '0 auto '
 			}}>
-				<Typography variant="h3">Các sản phẩm nổi bậc</Typography>
+				<Typography variant="h3"
+					sx={{
+						color: 'primary.main',
+						p: '0 20px',
+						fontSize: { xs: '2rem', sm: '3rem ' }
+
+					}}>
+					Các sản phẩm nổi bậc</Typography>
 				{productList && <ProductList products={productList?.data} />}
 			</Box>
 			<Footer data={info} />

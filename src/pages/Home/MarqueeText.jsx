@@ -33,7 +33,7 @@ export default function InfiniteMarquee({ data }) {
 					<Typography
 						key={i}
 						variant="h3"
-						sx={{ px: 4, fontWeight: "bold", textTransform: 'uppercase', fontSize: '8rem' }}
+						sx={{ px: 4, fontWeight: "bold", textTransform: 'uppercase', fontSize: { xs: '4rem', md: '6rem', xl: '8rem' } }}
 					>
 						{data}</Typography>
 				))}

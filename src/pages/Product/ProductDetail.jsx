@@ -14,7 +14,7 @@ function ProductDetail({ info }) {
 	const [contents, setContents] = useState([])
 	useEffect(() => {
 		API_GetProductById(id).then((data) => {
-			setDetail({ ...data, price: parseInt(data.price) })
+			setDetail({ ...data, price: typeof data.price === 'number' ? parseInt(data.price) : data.price })
 			setContents(data.description.split('\n'))
 		})
 	}, [id])
@@ -106,31 +106,55 @@ function ProductDetail({ info }) {
 							{`${detail.name} `}
 						</Typography>
 
-						<Typography variant='h6'
-							sx={{
-								m: '8px 0',
-								textAlign: {
-									xs: 'center',
-									md: 'left'
-								},
-							}}>
-							{parseFloat(`${(detail.price - (detail.price * (detail.precent / 100)))}`).toFixed(1) + '00 VND'}
-						</Typography>
-
-						{
-							!!detail.precent &&
-							<Typography gutterBottom variant="body1" component="p"
+						{typeof detail.price === 'number' ?
+							<Typography variant='h6'
 								sx={{
-									textDecoration: 'line-through',
-									color: '#888',
+									m: '8px 0',
 									textAlign: {
 										xs: 'center',
 										md: 'left'
 									},
 								}}>
-								{`${detail.price}.000 vnd`}
+								{parseFloat(`${(detail.price - (detail.price * (detail.precent / 100)))}`).toFixed(1) + '00 VND'}
+							</Typography>
+							:
+							<Typography variant='h6'
+								sx={{
+									m: '8px 0',
+									textAlign: {
+										xs: 'center',
+										md: 'left'
+									},
+								}}>
+								{detail.price}
 							</Typography>
 						}
+						{
+							!!detail.precent && typeof detail.price === 'number' ?
+								<Typography gutterBottom variant="body1" component="p"
+									sx={{
+										textDecoration: 'line-through',
+										color: '#888',
+										textAlign: {
+											xs: 'center',
+											md: 'left'
+										},
+									}}>
+									{`${detail.price}.000 vnd`}
+								</Typography> :
+								<Typography gutterBottom variant="body1" component="p"
+									sx={{
+										textDecoration: 'line-through',
+										color: '#888',
+										textAlign: {
+											xs: 'center',
+											md: 'left'
+										},
+									}}>
+									{detail.price}
+								</Typography>
+						}
+
 					</Box>
 
 					<Box sx={{

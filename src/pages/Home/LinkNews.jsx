@@ -8,20 +8,39 @@ import { isEmpty } from "lodash"
 function LinkNews({ inBlogsPage, dataList }) {
 	const navigate = useNavigate()
 
-	return <Box sx={{ minWidth: '1200px', maxWidth: '1200px', m: '0 auto', padding: '80px 0' }}>
-		<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: '20px' }}>
-			<Typography variant="h2" sx={{}}>Tin tức mới nhất</Typography>
-
+	return <Box sx={{
+		maxWidth: {
+			md: '1000px',
+			lg: '1200px'
+		}, m: '0 auto',
+		padding: '80px 0'
+	}}>
+		<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: '20px 40px' }}>
+			<Typography variant="h2" sx={{ fontSize: { xs: '2rem', sm: '3rem' } }}>Tin tức mới nhất</Typography>
 		</Box>
-		<Box sx={{ display: 'grid', gridTemplateColumns: ' repeat(4, 1fr)', gap: '40px' }}>
+		<Box sx={{
+			display: 'flex',
+			justifyContent: { xs: 'space-evenly', lg: 'space-between' },
+			padding: '0 20px',
+			flexWrap: 'wrap',
+			maxWidth: {
+				md: '1000px',
+				lg: '1200px'
+			},
+		}}>
 			{!isEmpty(dataList) &&
 				dataList?.map(news => {
 					return (
-
 						<Card sx={{
+							minWidth: '280px',
+							maxWidth: '280px',
+							minHeight: '380px',
+							maxHeight: '380px',
+							m: { xs: '20px 12px', lg: 'unset' },
 							'&:hover': {
 								cursor: 'pointer',
-								boxShadow: '0 0 12px 0 #ca1a75'
+								boxShadow: '0 0 12px 0 #ca1a75',
+
 							}
 						}}
 							onClick={() => {
@@ -44,7 +63,7 @@ function LinkNews({ inBlogsPage, dataList }) {
 							<CardMedia
 								component="img"
 								height="194"
-								image={news?.thumb}
+								image={news?.coverImage}
 								alt="Paella dish"
 							/>
 							<CardContent >
@@ -59,7 +78,7 @@ function LinkNews({ inBlogsPage, dataList }) {
 									WebkitBoxOrient: 'vertical',
 									whiteSpace: 'normal'
 								}}>
-									{news?.content}
+									{news?.excerpt}
 								</Typography>
 							</CardContent>
 
@@ -69,7 +88,7 @@ function LinkNews({ inBlogsPage, dataList }) {
 			}
 
 		</Box>
-	</Box>
+	</Box >
 }
 
 export default LinkNews

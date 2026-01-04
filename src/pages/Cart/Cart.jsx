@@ -89,7 +89,7 @@ function Cart({ info }) {
 	// 					}
 	// 				}}
 	return (
-		<Box sx={{ mt: '120px', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+		<Box sx={{ mt: { xs: '80px', md: '120px' }, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
 
 			<Header />
 
@@ -143,10 +143,12 @@ function Cart({ info }) {
 								flex: ' 0 0 40%',
 								minWidth: {
 									xs: '70%',
+									sm: '70%',
 									md: '40%'
 								},
 								maxWidth: {
 									xs: '70%',
+									sm: '70%',
 									md: '40%'
 								},
 							}}>
@@ -172,9 +174,18 @@ function Cart({ info }) {
 											<Typography variant='h6' sx={{ textTransform: 'uppercase', mb: '8px 0' }} >
 												{`${product.name} `}
 											</Typography>
-											<Typography variant='h6'>
-												{parseFloat(`${(product.price - (product.price * (product.precent / 100)))}`).toFixed(1) + '00 VND'}
-											</Typography>
+
+
+
+											{typeof product.price === 'number' ?
+												<Typography variant='h6'>
+													{parseFloat(`${(product.price - (product.price * (product.precent / 100)))}`).toFixed(1) + '00 VND'}
+												</Typography>
+												:
+												<Typography variant='h6'>
+													{product.price}
+												</Typography>
+											}
 										</Box>
 
 									</Box>
@@ -225,20 +236,29 @@ function Cart({ info }) {
 								<Box sx={{
 									maxWidth: {
 										xs: '100%',
-										md: '160px'
+										md: '100px',
+										lg: '160px'
 									},
 									minWidth: {
 										xs: '100%',
-										md: '160px'
+										md: '100px',
+										lg: '160px'
 									},
 									textAlign: {
 										xs: 'right',
 										md: 'left'
 									}
 								}}>
-									<Typography variant='h6' sx={{ fontSize: { xs: '16px', md: '20px' }, fontWeight: { xs: '700', md: '500' } }}>
-										{`${new Intl.NumberFormat().format(((product.price - (product.price * (product.precent / 100))) * product.quantityInCart) * 1000)} VND`}
-									</Typography>
+
+									{typeof product.price === 'number' ?
+										<Typography variant='h6' sx={{ fontSize: { xs: '16px', md: '20px' }, fontWeight: { xs: '700', md: '500' } }}>
+											{`${new Intl.NumberFormat().format(((product.price - (product.price * (product.precent / 100))) * product.quantityInCart) * 1000)} VND`}
+										</Typography>
+										:
+										<Typography variant='h6' sx={{ fontSize: { xs: '16px', md: '20px' }, fontWeight: { xs: '700', md: '500' } }}>
+											{product.price}
+										</Typography>
+									}
 								</Box>
 
 								<Box sx={{
@@ -291,15 +311,25 @@ function Cart({ info }) {
 						flex: '0 0 35%',
 						height: '120px',
 						borderRadius: '4px',
-						border: '1px solid #000'
+						border: '1px solid #000',
+						m: '20px 0'
 					}}>
 
 						<Box sx={{ display: 'flex', justifyContent: 'space-between', padding: '8px 16px', alignItems: 'center' }}>
 							<Typography variant='h6' sx={{ fontSize: '16px' }}>Tổng tiền</Typography>
-							<Typography variant='h6' sx={{ fontWeight: 'bold ' }}>{`${(new Intl.NumberFormat().format(totalPrice * 1000))} VND`}</Typography>
+							{!isNaN(totalPrice)
+								? <Typography variant='h6' sx={{ fontWeight: 'bold ' }}>{`${(new Intl.NumberFormat().format(totalPrice * 1000))} VND`}</Typography>
+								: <Typography variant='h6' sx={{ fontWeight: 'bold ' }}>{`Đang cập nhật`}</Typography>
+							}
+
 						</Box>
 
-						<Box sx={{ backgroundColor: '#fafafa', textAlign: 'center', borderTop: '1px solid #000' }}>
+						<Box sx={{
+							backgroundColor: '#fafafa',
+							textAlign: 'center',
+							borderTop: '1px solid #000',
+							padding: { xs: '12px 0', md: 'unset' }
+						}}>
 							<Button variant="contained"
 								sx={{
 									backgroundColor: 'primary.dark',

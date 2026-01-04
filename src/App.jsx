@@ -15,6 +15,8 @@ import Cart from './pages/Cart/Cart'
 import Checkout from './pages/Checkout/Checkout'
 import { isEmpty } from 'lodash'
 import VerifyOrder from './pages/Veriry/VerifyOrder'
+import Admin from './pages/Admin/Admin'
+import Login from './pages/Login/Login'
 
 
 
@@ -37,6 +39,29 @@ function App() {
       <Outlet />
     )
   }
+  const ProtectedRouteAdmin = () => {
+    const user = JSON.parse(localStorage.getItem(`userInfo`))
+    if (!user) {
+      return (
+        <Navigate to={`/login`} replace={true} />
+      )
+    }
+    return (
+      <Outlet />
+    )
+  }
+  const AuthorizeRoute = () => {
+    const user = JSON.parse(localStorage.getItem(`userInfo`))
+    if (user) {
+      let toRoute = `admin`
+      return (
+        <Navigate to={toRoute} replace={true} />
+      )
+    }
+    return (
+      <Outlet />
+    )
+  }
   if (!!info) {
     return (
       <Routes>
@@ -52,6 +77,16 @@ function App() {
           <Route path='/checkout' element={<Checkout info={info} />} />
         </Route>
         <Route path='/verifyMail/:token' element={<VerifyOrder />} />
+
+
+        <Route element={<AuthorizeRoute />}>
+          <Route path='/login' element={<Login />} />
+        </Route>
+
+        <Route element={<ProtectedRouteAdmin />}>
+          <Route path='/admin' element={<Admin />} />
+        </Route>
+
       </Routes>
 
     )
