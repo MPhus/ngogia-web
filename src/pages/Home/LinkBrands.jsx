@@ -29,13 +29,13 @@ function LinkBrands({ data }) {
 			}
 		}} >
 			<Typography variant="h2" sx={{ color: '#fff' }}>
-				Các thương hiệu mang tính biểu tượng của chúng tôi
+				Mỗi thương hiệu NGÔ GIA là một hành trình
 			</Typography>
 			<Typography variant="h2" sx={{ color: '#6ddc90' }}>
-				đang thực hiện sứ mệnh
+				Thấu hiểu làn da, nhằm lan tỏa vẻ đẹp VIỆT
 			</Typography>
 			<Typography variant="h2" sx={{ color: '#95cbe7' }}>
-				tôn vinh vẻ đẹp khỏe mạnh.
+				tự nhiên,	khỏe mạnh theo cách riêng của người Việt.
 			</Typography>
 			<Button
 				onClick={() => natigate('/brands')}

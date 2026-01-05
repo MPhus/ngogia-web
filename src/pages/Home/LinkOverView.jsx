@@ -68,7 +68,7 @@ function LinkOverView({ data }) {
 						minWidth: { xs: '200px', xl: '320px' },
 						justifyContent: 'space-between',
 						border: 'none',
-						backgroundColor: '#000',
+						backgroundColor: 'primary.main',
 						'&:hover': {
 							opacity: '0.8',
 							backgroundColor: 'tranparent '
