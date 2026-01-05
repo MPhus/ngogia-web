@@ -434,228 +434,196 @@ export const PRODUCT_LIST_MOCK = [
 ]
 const testttttt = [{
 	"fieldname": "thumb",
-	"originalname": "midu_A1.png",
+	"originalname": "U1.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532660/NgoGia/g5y8rp7gp0owwq21tloo.png",
-	"size": 1872455,
-	"filename": "NgoGia/g5y8rp7gp0owwq21tloo"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592852/NgoGia/yf6hjd0fgjhsp7vccivp.png",
+	"size": 1604724,
+	"filename": "NgoGia/yf6hjd0fgjhsp7vccivp"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_A2.png",
+	"originalname": "U2.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532666/NgoGia/lpfic7wsfx0sydxiip8i.png",
-	"size": 1870342,
-	"filename": "NgoGia/lpfic7wsfx0sydxiip8i"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592856/NgoGia/thiq7fsyectkikzgjov1.png",
+	"size": 1726873,
+	"filename": "NgoGia/thiq7fsyectkikzgjov1"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_B7.png",
+	"originalname": "U3.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532666/NgoGia/iguqwkn8b4tkht6mucln.png",
-	"size": 1857558,
-	"filename": "NgoGia/iguqwkn8b4tkht6mucln"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592858/NgoGia/im9a6not09ohxbnc84zb.png",
+	"size": 1762748,
+	"filename": "NgoGia/im9a6not09ohxbnc84zb"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_B10.png",
+	"originalname": "U4.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532672/NgoGia/iqt6d1qtttgrkhtj5pfc.png",
-	"size": 1841948,
-	"filename": "NgoGia/iqt6d1qtttgrkhtj5pfc"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592859/NgoGia/sbq8bsbqinyw1tpxndw3.png",
+	"size": 1644886,
+	"filename": "NgoGia/sbq8bsbqinyw1tpxndw3"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_B11.png",
+	"originalname": "U5.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532671/NgoGia/zrhsfnaoejupsmoulzac.png",
-	"size": 1861910,
-	"filename": "NgoGia/zrhsfnaoejupsmoulzac"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592865/NgoGia/vskbkgorbhmke1ecjy9s.png",
+	"size": 1879432,
+	"filename": "NgoGia/vskbkgorbhmke1ecjy9s"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_D2.png",
+	"originalname": "U6.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532671/NgoGia/quhagamdi5regyoeu2nh.png",
-	"size": 1862767,
-	"filename": "NgoGia/quhagamdi5regyoeu2nh"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592864/NgoGia/gl3utvzz6sfy7rimjv1z.png",
+	"size": 1916427,
+	"filename": "NgoGia/gl3utvzz6sfy7rimjv1z"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_D4.png",
+	"originalname": "U7.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532676/NgoGia/zfrshcicpixiodoliqq3.png",
-	"size": 1935039,
-	"filename": "NgoGia/zfrshcicpixiodoliqq3"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592867/NgoGia/sqde8umdavs0ioggoft7.png",
+	"size": 2046784,
+	"filename": "NgoGia/sqde8umdavs0ioggoft7"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_D5.png",
+	"originalname": "U8.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532681/NgoGia/gcmhe52oek01krbezian.png",
-	"size": 1825399,
-	"filename": "NgoGia/gcmhe52oek01krbezian"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592869/NgoGia/oalbj1a1gwvgkazcauiy.png",
+	"size": 2017348,
+	"filename": "NgoGia/oalbj1a1gwvgkazcauiy"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_D6.png",
+	"originalname": "U9.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532680/NgoGia/kzj4heccimbegizb662u.png",
-	"size": 1905570,
-	"filename": "NgoGia/kzj4heccimbegizb662u"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592871/NgoGia/dgd0abzstklkcdeeujmq.png",
+	"size": 2017139,
+	"filename": "NgoGia/dgd0abzstklkcdeeujmq"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_E1.png",
+	"originalname": "U10.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532681/NgoGia/g2hv0druu9cverpphs6c.png",
-	"size": 1828696,
-	"filename": "NgoGia/g2hv0druu9cverpphs6c"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592871/NgoGia/ixyxoou4vbxxwxdtodyv.png",
+	"size": 2235674,
+	"filename": "NgoGia/ixyxoou4vbxxwxdtodyv"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_E2.png",
+	"originalname": "U11.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532681/NgoGia/p6rj1hkhwwniakmwydlb.png",
-	"size": 1819436,
-	"filename": "NgoGia/p6rj1hkhwwniakmwydlb"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592876/NgoGia/aoq9uzeqhowgglf9jnj1.png",
+	"size": 1986639,
+	"filename": "NgoGia/aoq9uzeqhowgglf9jnj1"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_E3.png",
+	"originalname": "U12.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532694/NgoGia/a89942mwfj5l3xwoe0jn.png",
-	"size": 1833400,
-	"filename": "NgoGia/a89942mwfj5l3xwoe0jn"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592879/NgoGia/zj1sae3b2uxgc1pe5l4d.png",
+	"size": 1951674,
+	"filename": "NgoGia/zj1sae3b2uxgc1pe5l4d"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_E4.png",
+	"originalname": "U13.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532698/NgoGia/s5i6ggxugttlgmyfvd0u.png",
-	"size": 1921058,
-	"filename": "NgoGia/s5i6ggxugttlgmyfvd0u"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592879/NgoGia/remmjyy8ca5g3snjvsss.png",
+	"size": 1911808,
+	"filename": "NgoGia/remmjyy8ca5g3snjvsss"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_E5.png",
+	"originalname": "U14.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532699/NgoGia/zksmd9ldxdaku3xt6f0p.png",
-	"size": 1889627,
-	"filename": "NgoGia/zksmd9ldxdaku3xt6f0p"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592883/NgoGia/byhoufkanuua509wxtis.png",
+	"size": 1994692,
+	"filename": "NgoGia/byhoufkanuua509wxtis"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_E6.png",
+	"originalname": "U15.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532700/NgoGia/tnmnbutoierogpjcbh5i.png",
-	"size": 1790707,
-	"filename": "NgoGia/tnmnbutoierogpjcbh5i"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592891/NgoGia/nipkspxkzumyqvrjumtu.png",
+	"size": 1998522,
+	"filename": "NgoGia/nipkspxkzumyqvrjumtu"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_E7.png",
+	"originalname": "U16.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532703/NgoGia/urbsnjx8comsxelaazpm.png",
-	"size": 1855828,
-	"filename": "NgoGia/urbsnjx8comsxelaazpm"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592889/NgoGia/poffawcxgqwrpi0drvnd.png",
+	"size": 2008686,
+	"filename": "NgoGia/poffawcxgqwrpi0drvnd"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_E9.png",
+	"originalname": "U17.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532703/NgoGia/ois3dnm4jkuiai5p5q3h.png",
-	"size": 1856507,
-	"filename": "NgoGia/ois3dnm4jkuiai5p5q3h"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592890/NgoGia/ttpmqgo1oy3iksik7ayt.png",
+	"size": 1998466,
+	"filename": "NgoGia/ttpmqgo1oy3iksik7ayt"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_E10.png",
+	"originalname": "U18.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532704/NgoGia/vuusbt7pe8pypkl8dtlk.png",
-	"size": 1822107,
-	"filename": "NgoGia/vuusbt7pe8pypkl8dtlk"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592901/NgoGia/gech26nk6a9khae5gneh.png",
+	"size": 2095134,
+	"filename": "NgoGia/gech26nk6a9khae5gneh"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_E11.png",
+	"originalname": "U19.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532712/NgoGia/rebogh6ojmanbldyscpc.png",
-	"size": 1807491,
-	"filename": "NgoGia/rebogh6ojmanbldyscpc"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592905/NgoGia/fdti5aoqjffiwzdubjkl.png",
+	"size": 2009040,
+	"filename": "NgoGia/fdti5aoqjffiwzdubjkl"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_E12.png",
+	"originalname": "U20.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532714/NgoGia/zaehixdvlg5g4jejllob.png",
-	"size": 1797201,
-	"filename": "NgoGia/zaehixdvlg5g4jejllob"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592908/NgoGia/a6i5wxjnc4syo7rvgnpz.png",
+	"size": 1884343,
+	"filename": "NgoGia/a6i5wxjnc4syo7rvgnpz"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_F1.png",
+	"originalname": "U22.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532718/NgoGia/mbmko25xscnywewdeifu.png",
-	"size": 1878806,
-	"filename": "NgoGia/mbmko25xscnywewdeifu"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592909/NgoGia/gyka5un4huoqmggrat4v.png",
+	"size": 1836248,
+	"filename": "NgoGia/gyka5un4huoqmggrat4v"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_F2.png",
+	"originalname": "U23.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532718/NgoGia/wub9harvirulnjs7d9xv.png",
-	"size": 1879950,
-	"filename": "NgoGia/wub9harvirulnjs7d9xv"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592913/NgoGia/cofzcjgwoi01sj40opec.png",
+	"size": 2059478,
+	"filename": "NgoGia/cofzcjgwoi01sj40opec"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_F3.png",
+	"originalname": "U24.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532724/NgoGia/kv5x1pog1ekxdxzaw2d6.png",
-	"size": 1878971,
-	"filename": "NgoGia/kv5x1pog1ekxdxzaw2d6"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592913/NgoGia/edoo2qwccti2p4o1e1sz.png",
+	"size": 2068663,
+	"filename": "NgoGia/edoo2qwccti2p4o1e1sz"
 }, {
 	"fieldname": "thumb",
-	"originalname": "midu_F4.png",
+	"originalname": "U25.png",
 	"encoding": "7bit",
 	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532727/NgoGia/smmyqjj2wwq3ket5sojj.png",
-	"size": 1907432,
-	"filename": "NgoGia/smmyqjj2wwq3ket5sojj"
-}, {
-	"fieldname": "thumb",
-	"originalname": "midu_G1.png",
-	"encoding": "7bit",
-	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532727/NgoGia/n5bdjb68fbx0ltvcaxhy.png",
-	"size": 1895445,
-	"filename": "NgoGia/n5bdjb68fbx0ltvcaxhy"
-}, {
-	"fieldname": "thumb",
-	"originalname": "midu_G2.png",
-	"encoding": "7bit",
-	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532731/NgoGia/lthxjyhaxpe1hwu2ahvq.png",
-	"size": 1836836,
-	"filename": "NgoGia/lthxjyhaxpe1hwu2ahvq"
-}, {
-	"fieldname": "thumb",
-	"originalname": "midu_G3.png",
-	"encoding": "7bit",
-	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532731/NgoGia/ya5wvykd7mlshf4l3ppl.png",
-	"size": 1846028,
-	"filename": "NgoGia/ya5wvykd7mlshf4l3ppl"
-}, {
-	"fieldname": "thumb",
-	"originalname": "midu_G4.png",
-	"encoding": "7bit",
-	"mimetype": "image/png",
-	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767532733/NgoGia/rsaztgtorflbcjko5pgi.png",
-	"size": 1877982,
-	"filename": "NgoGia/rsaztgtorflbcjko5pgi"
+	"path": "https://res.cloudinary.com/divrizdwo/image/upload/v1767592915/NgoGia/otblu2rtieyzl9l0dwrh.png",
+	"size": 2012138,
+	"filename": "NgoGia/otblu2rtieyzl9l0dwrh"
 }]
 export const BACHSAM_ARR = [
 	{
@@ -1192,172 +1160,148 @@ export const nameArr = [
 
 const Lystest = [
 	{
-		"name": "Midu A1",
-		"title": "Kem dưỡng trắng da mặt chống nắng",
-		"description": "Sản phẩm kem dưỡng da đa chức năng, vừa cung cấp dưỡng chất làm trắng da chuyên sâu, vừa tích hợp khả năng chống tia UV mạnh mẽ. Công thức giúp ngăn ngừa sự hình thành mụn và làm mờ các vết thâm hiện có, bảo vệ da toàn diện dưới ánh nắng.",
+		"name": "Arbutin U1",
+		"title": "Kem mụn thâm",
+		"description": "Kem đặc trị giúp làm khô nhân mụn nhanh chóng, giảm viêm sưng và ngăn ngừa mụn tái phát. Công thức dịu nhẹ còn hỗ trợ làm mờ các vết thâm do mụn để lại, giúp da phục hồi và sáng mịn.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu A2",
+		"name": "Arbutin U2",
 		"title": "Kem nám – tàn nhang – đồi mồi",
-		"description": "Kem đặc trị tập trung làm mờ các vùng da bị sạm, nám, tàn nhang và đồi mồi. Sản phẩm kích thích quá trình tái tạo tế bào da, giúp loại bỏ dần sắc tố cũ và ngăn ngừa nám mới hình thành, mang lại làn da sạch và tươi mới.",
+		"description": "Sản phẩm kem dưỡng chuyên sâu giúp ức chế sản sinh melanin, làm mờ hiệu quả các đốm nám, tàn nhang và đồi mồi lâu năm. Nuôi dưỡng da khỏe mạnh, sáng đều màu và ngăn chặn sắc tố quay trở lại.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu B7",
-		"title": "Kem dưỡng trắng da mặt tái tạo làn da",
-		"description": "Kem dưỡng ẩm giàu vitamin, thúc đẩy quá trình tái tạo và phục hồi các tế bào da bị tổn thương. Giúp da khỏe mạnh hơn từ sâu bên trong, trở nên mịn màng, đồng thời cải thiện độ trắng sáng tự nhiên.",
+		"name": "Arbutin U3",
+		"title": "Kem trắng da chống nắng",
+		"description": "Kem dưỡng trắng da mặt tích hợp khả năng chống nắng phổ rộng (UV), bảo vệ da khỏi tác hại của tia cực tím. Vừa dưỡng da sáng mịn, vừa là lớp bảo vệ hoàn hảo cho da hàng ngày.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu B10",
-		"title": "Kem giảm mụn – mờ thâm – mờ sẹo",
-		"description": "Kem chuyên dụng cho da mụn, giúp làm dịu nhanh các nốt mụn sưng đỏ, đẩy nhanh quá trình làm khô cồi mụn. Sản phẩm còn hỗ trợ phục hồi mô da, làm mờ rõ rệt các vết thâm và sẹo sau mụn.",
+		"name": "Arbutin U4",
+		"title": "Kem giảm lão hóa da",
+		"description": "Kem dưỡng giàu chất chống oxy hóa, giúp cải thiện độ đàn hồi và làm mờ các nếp nhăn, vết chân chim. Thúc đẩy tái tạo tế bào, mang lại làn da căng mịn, săn chắc và trẻ trung hơn.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu B11",
-		"title": "Kem dưỡng trắng da mặt chống nắng",
-		"description": "Kem dưỡng với chỉ số chống nắng hiệu quả, bảo vệ da khỏi tác động tiêu cực của môi trường và tia UV. Đồng thời, sản phẩm cung cấp các hoạt chất dưỡng trắng mạnh mẽ để làm sáng và đều màu da mặt.",
-		"uses": "face"
-	},
-	{
-		"name": "Midu D2",
-		"title": "Kem nám – dưỡng trắng – giảm thâm da",
-		"description": "Sản phẩm đa tác động: làm mờ nám sạm, cung cấp dưỡng chất làm trắng và giảm thâm. Kem giúp hiệu chỉnh sắc tố da, làm mờ các vết tối màu để mang lại làn da trắng sáng và đều màu hơn.",
-		"uses": "face"
-	},
-	{
-		"name": "Midu D4",
-		"title": "Kem giảm mụn thâm – mờ sẹo",
-		"description": "Kem hỗ trợ điều trị mụn và phục hồi da chuyên sâu. Sản phẩm giúp nhanh chóng tái tạo lại lớp biểu bì sau khi mụn lành, giảm thiểu tối đa sự hình thành của vết thâm và sẹo rỗ.",
-		"uses": "face"
-	},
-	{
-		"name": "Midu D5",
-		"title": "Kem dưỡng trắng da mặt chống nắng",
-		"description": "Kết hợp dưỡng trắng và bảo vệ da trong một bước. Kem tạo lớp màng chắn vật lý/hóa học chống tia UV, đồng thời nuôi dưỡng da mặt sáng mịn, giúp đơn giản hóa quy trình chăm sóc da hàng ngày.",
-		"uses": "face"
-	},
-	{
-		"name": "Midu D6",
-		"title": "Kem dưỡng trắng da mặt tái tạo làn da",
-		"description": "Kem dưỡng có khả năng phục hồi da yếu, da nhạy cảm, thúc đẩy chu trình tái tạo tế bào mới. Giúp da lấy lại vẻ khỏe khoắn, tươi tắn và cải thiện độ sáng rõ rệt.",
-		"uses": "face"
-	},
-	{
-		"name": "Midu E1",
-		"title": "Kem dưỡng trắng da giữ ẩm – ngăn mụn",
-		"description": "Cung cấp độ ẩm dồi dào, giúp da mềm mịn và tránh tình trạng da khô. Kem cũng chứa các thành phần giúp kiểm soát dầu và kháng khuẩn nhẹ, từ đó hạn chế tối đa sự phát triển của mụn.",
-		"uses": "face"
-	},
-	{
-		"name": "Midu E2",
+		"name": "Arbutin U5",
 		"title": "Kem nám – tàn nhang – đồi mồi",
-		"description": "Sản phẩm chuyên biệt để cải thiện tình trạng da sạm màu và các vấn đề tăng sắc tố. Công thức thấm sâu giúp điều trị tận gốc các đốm nám, mang lại hiệu quả rõ rệt cho da xỉn màu.",
+		"description": "Kem dưỡng hỗ trợ điều trị nám, tàn nhang, giúp da loại bỏ các tế bào sạm màu. Công thức thẩm thấu sâu, tác động trực tiếp lên vùng da tăng sắc tố, mang lại hiệu quả làm sáng rõ rệt.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu E3",
-		"title": "Kem dưỡng trắng da mặt tái tạo làn da",
-		"description": "Kem dưỡng hỗ trợ mạnh mẽ quá trình tái tạo tế bào da, giúp da loại bỏ lớp sừng già cỗi. Thúc đẩy da trở nên khỏe mạnh, căng bóng và sáng mịn hơn.",
-		"uses": "face"
-	},
-	{
-		"name": "Midu E4",
-		"title": "Kem giảm mụn – mờ thâm – mờ sẹo",
-		"description": "Sản phẩm giúp làm dịu và kiểm soát mụn viêm. Đặc biệt hiệu quả trong việc xử lý các vết thâm sau mụn và làm đầy sẹo lõm nhỏ, giúp bề mặt da trở nên bằng phẳng và đều màu.",
-		"uses": "face"
-	},
-	{
-		"name": "Midu E5",
+		"name": "Arbutin U6",
 		"title": "Kem nám – tàn nhang – đồi mồi",
-		"description": "Kem dưỡng trị nám kết hợp với thành phần làm sáng da. Giúp phân giải các hắc tố melanin tập trung, đồng thời nâng tông da tổng thể, mang lại làn da trắng sáng không tì vết.",
+		"description": "Sản phẩm trị nám với thành phần lành tính, giúp làm đều màu da và ngăn ngừa sự hình thành của các đốm nâu mới. Cung cấp độ ẩm cần thiết, giúp da mặt mềm mại và rạng rỡ.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu E6",
-		"title": "Kem dưỡng trắng da mặt tái tạo làn da",
-		"description": "Kem giàu thành phần chống oxy hóa, hỗ trợ quá trình tái tạo tự nhiên của da. Sử dụng đều đặn giúp da săn chắc hơn, giảm thiểu các dấu hiệu lão hóa sớm và duy trì độ ẩm lý tưởng.",
+		"name": "Arbutin U7",
+		"title": "Sữa rửa mặt",
+		"description": "Sữa rửa mặt tạo bọt nhẹ, giúp làm sạch sâu lỗ chân lông, loại bỏ bụi bẩn, dầu thừa và cặn trang điểm. Duy trì độ ẩm tự nhiên, không gây khô căng da sau khi sử dụng.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu E7",
-		"title": "Kem dưỡng trắng da mặt tái tạo làn da",
-		"description": "Kem phục hồi dành cho làn da yếu, dễ bị kích ứng. Sản phẩm giúp củng cố hàng rào lipid, tăng cường khả năng tự vệ của da, đồng thời dưỡng da trở nên sáng khỏe và mịn màng.",
+		"name": "Arbutin U8",
+		"title": "Kem làm sạch tế bào chết sáng da",
+		"description": "Kem tẩy tế bào chết dạng hạt mịn hoặc hóa học, giúp loại bỏ lớp sừng già cỗi trên bề mặt da. Quá trình này giúp da thông thoáng, hấp thụ dưỡng chất tốt hơn và mang lại làn da sáng mịn.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu E9",
-		"title": "Kem dưỡng trắng da mặt chống nắng",
-		"description": "Kem có kết cấu mỏng nhẹ, dễ thẩm thấu, cung cấp khả năng bảo vệ quang phổ rộng. Lý tưởng để sử dụng hàng ngày, vừa dưỡng trắng hiệu quả vừa tạo lớp bảo vệ vững chắc cho da.",
+		"name": "Arbutin U9",
+		"title": "Serum nám – tàn nhang – đồi mồi",
+		"description": "Serum có kết cấu lỏng nhẹ, chứa nồng độ cao các hoạt chất làm mờ nám, tàn nhang. Thẩm thấu nhanh, tác động sâu vào lớp hạ bì, giúp cải thiện sắc tố da từ bên trong.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu E10",
-		"title": "Kem nám – tàn nhang – đồi mồi",
-		"description": "Sản phẩm chuyên sâu trong việc làm mờ và hỗ trợ làm đều màu da. Các hoạt chất thẩm thấu giúp làm nhạt dần các vùng da tối màu, trả lại tông da đồng nhất và sáng khỏe.",
+		"name": "Arbutin U10",
+		"title": "Nhuộm trắng da toàn thân",
+		"description": "Sản phẩm làm trắng da cấp tốc cho cơ thể (dạng ủ hoặc tắm trắng). Giúp nâng tông da rõ rệt sau một lần sử dụng, loại bỏ da chết và mang lại làn da body trắng hồng, mịn màng.",
+		"uses": "body"
+	},
+	{
+		"name": "Arbutin U11",
+		"title": "Nâng tone da face",
+		"description": "Kem hoặc tinh chất giúp nâng tông da mặt tức thì, có thể sử dụng như lớp lót trang điểm hoặc kem dưỡng ban ngày. Giúp da trông sáng hơn, rạng rỡ hơn một cách tự nhiên.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu E11",
-		"title": "Kem dưỡng trắng da tái tạo làn da",
-		"description": "Kem dưỡng thúc đẩy mạnh mẽ quá trình đổi mới tế bào da, giúp da loại bỏ những tổn thương cũ. Mang lại làn da tươi trẻ, rạng rỡ và tăng cường độ trắng sáng cho da mặt.",
+		"name": "Arbutin U12",
+		"title": "Kem trắng da toàn thân",
+		"description": "Kem dưỡng thể có tác dụng làm trắng da body lâu dài. Cung cấp độ ẩm, giúp da mềm mại, đồng thời cải thiện sắc tố, làm da body trắng sáng và đều màu theo thời gian.",
+		"uses": "body"
+	},
+	{
+		"name": "Arbutin U13",
+		"title": "Gel hút mụn",
+		"description": "Gel chuyên dụng giúp làm mềm nhân mụn đầu đen, mụn cám và dễ dàng loại bỏ chúng bằng cách lột nhẹ hoặc hút. Giúp làm sạch sâu lỗ chân lông, ngăn ngừa hình thành mụn mới.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu E12",
-		"title": "Kem giảm mụn – mờ thâm – mờ sẹo",
-		"description": "Sản phẩm điều trị và giảm thiểu các khuyết điểm do mụn gây ra. Giúp giảm viêm nhanh chóng, đồng thời kích thích collagen để làm mờ vết thâm và sẹo lồi/lõm nhỏ.",
+		"name": "Arbutin U14",
+		"title": "Gel hút mụn",
+		"description": "Sản phẩm dạng gel làm sạch mụn cám, mụn đầu đen, đặc biệt hiệu quả ở vùng mũi và cằm. Giúp se khít lỗ chân lông sau khi loại bỏ tạp chất, mang lại làn da mịn màng.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu F1",
-		"title": "Kem dưỡng trắng da mặt chống nắng",
-		"description": "Kem kết hợp SPF bảo vệ da khỏi tia UV và các hoạt chất dưỡng trắng da. Giúp ngăn ngừa lão hóa do ánh nắng, duy trì độ ẩm và mang lại làn da trắng mịn không tì vết.",
+		"name": "Arbutin U15",
+		"title": "Serum mụn thâm",
+		"description": "Serum giúp làm dịu nốt mụn sưng đỏ, đẩy nhanh quá trình làm lành vết thương. Đồng thời, sản phẩm tập trung vào việc làm mờ thâm mụn, giúp da nhanh chóng lấy lại vẻ đẹp không tì vết.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu F2",
-		"title": "Kem nám – tàn nhang – đồi mồi",
-		"description": "Kem dưỡng đặc trị giúp cải thiện da bị nám, tàn nhang và đồi mồi. Sản phẩm nuôi dưỡng sâu, giúp ức chế hắc tố melanin và làm sáng các vùng da không đều màu.",
+		"name": "Arbutin U16",
+		"title": "Serum dưỡng trắng da",
+		"description": "Serum cô đặc với các thành phần dưỡng trắng mạnh, giúp da mặt sáng bật tông và đều màu hơn. Kết cấu nhẹ, dễ dàng thẩm thấu sâu, cung cấp hiệu quả dưỡng trắng tối ưu.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu F3",
-		"title": "Kem dưỡng trắng da tái tạo làn da",
-		"description": "Kem dưỡng ẩm và làm sáng da, đồng thời hỗ trợ da tự phục hồi và tái tạo. Giúp cải thiện cấu trúc da, làm da căng bóng, mịn màng và tươi sáng hơn.",
+		"name": "Arbutin U17",
+		"title": "Serum giảm lão hóa da",
+		"description": "Serum chống lão hóa giúp kích thích sản sinh collagen, cải thiện độ săn chắc của da. Giảm sự xuất hiện của nếp nhăn và mang lại vẻ ngoài tươi trẻ, rạng rỡ cho da mặt.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu F4",
-		"title": "Kem giảm mụn thâm – mờ sẹo",
-		"description": "Sản phẩm trị mụn hiệu quả, giúp làm xẹp mụn viêm và đẩy nhanh quá trình làm mờ các vết thâm. Tác động kép giúp làn da không chỉ sạch mụn mà còn phục hồi bề mặt da mịn màng.",
+		"name": "Arbutin U18",
+		"title": "Gel tẩy lông",
+		"description": "Gel tẩy lông dịu nhẹ, giúp loại bỏ lông trên cơ thể một cách nhanh chóng và không đau rát. Công thức chứa thành phần làm dịu da, giúp da body mềm mại sau khi tẩy.",
+		"uses": "body"
+	},
+	{
+		"name": "Arbutin U19",
+		"title": "Serum nám – tàn nhang – đồi mồi",
+		"description": "Tinh chất đặc trị với khả năng làm sáng da mạnh, giúp phá vỡ cấu trúc của các đốm nâu. Hỗ trợ điều trị nám da, tàn nhang tận gốc, mang lại làn da trắng sáng và không bị tối màu.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu G1",
-		"title": "Kem giảm mụn – mờ sẹo",
-		"description": "Kem chuyên biệt giúp điều trị các loại mụn, ngăn ngừa mụn tái phát. Hỗ trợ phục hồi da sau tổn thương, kích thích sản sinh collagen để làm mờ sẹo và mang lại làn da sạch mụn, khỏe mạnh.",
+		"name": "Arbutin U20",
+		"title": "Gel hút mụn",
+		"description": "Gel làm tan mụn đầu đen, làm sạch sâu lỗ chân lông. Giúp loại bỏ các chất bẩn tích tụ, ngăn ngừa mụn cám và giữ cho vùng da thường xuyên tiết dầu như mũi, trán luôn sạch sẽ.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu G2",
-		"title": "Kem dưỡng trắng da mặt chống nắng",
-		"description": "Kem dưỡng trắng có tích hợp khả năng chống nắng, bảo vệ da khỏi các tác nhân gây hại từ môi trường. Công thức dưỡng ẩm nhẹ nhàng, giúp da trắng sáng và được bảo vệ tối ưu mỗi ngày.",
+		"name": "Arbutin U22",
+		"title": "Gel hút mụn",
+		"description": "Gel vệ sinh da mặt chuyên sâu, loại bỏ các loại mụn ẩn và mụn đầu đen li ti. Dùng đều đặn giúp làm sạch da, giúp da thông thoáng và mịn màng hơn.",
 		"uses": "face"
 	},
 	{
-		"name": "Midu G3",
-		"title": "Kem dưỡng trắng da tái tạo làn da",
-		"description": "Kem dưỡng giúp tăng cường tái tạo tế bào da, mang lại làn da tươi mới và rạng rỡ. Sản phẩm cải thiện độ sáng, độ mềm mịn và giúp da hấp thụ dưỡng chất tốt hơn.",
-		"uses": "face"
+		"name": "Arbutin U23",
+		"title": "Kem làm trắng da nhanh",
+		"description": "Kem dưỡng body có tác dụng nâng tông tức thì (tone-up) và dưỡng trắng chuyên sâu. Mang lại làn da body trắng sáng, mịn màng và giúp che đi các khuyết điểm nhỏ trên da.",
+		"uses": "body"
 	},
 	{
-		"name": "Midu G4",
-		"title": "Kem nám – tàn nhang – đồi mồi",
-		"description": "Sản phẩm dưỡng da chuyên trị nám, tàn nhang và đồi mồi. Công thức giàu dưỡng chất giúp làm mờ hiệu quả các đốm nâu, đồng thời nuôi dưỡng da khỏe mạnh và ngăn chặn sự quay trở lại của nám.",
-		"uses": "face"
+		"name": "Arbutin U24",
+		"title": "Kem làm trắng da nhanh",
+		"description": "Sản phẩm làm trắng body cấp tốc, giúp da hấp thụ dưỡng chất nhanh chóng để đạt được hiệu quả trắng sáng. Cải thiện độ ẩm và giúp da body rạng rỡ hơn.",
+		"uses": "body"
+	},
+	{
+		"name": "Arbutin U25",
+		"title": "Kem làm trắng da",
+		"description": "Kem dưỡng trắng body hàng ngày, cung cấp độ ẩm và nuôi dưỡng da khỏe mạnh. Sản phẩm giúp làm mờ các vết thâm trên cơ thể, mang lại làn da body trắng sáng, mềm mại tự nhiên.",
+		"uses": "body"
 	}
 ]
 export const impdataBaseWithShoppe = (clouARR, nameTitleDes, string1, string2) => {
@@ -1400,17 +1344,17 @@ export const impdataBase = (clouARR, nameTitleDes) => {
 	}
 
 	const resuil = clouARR.map(bs => {
-		const arrTemp = bs.originalname.split('midu_').join('').split('.png').slice(0, 1)
-		// const arrTemp = bs.originalname.split('.').slice(0, 1)
+		// const arrTemp = bs.originalname.split('midu_').join('').split('.png').slice(0, 1)
+		const arrTemp = bs.originalname.split('.').slice(0, 1)
 		// console.log(' arrTemp: ', arrTemp)
 
-		arrTemp.unshift('Midu')
+		arrTemp.unshift('Arbutin')
 		let resultString = arrTemp.join(' ')
-		console.log(' resultString: ', resultString)
+		// console.log(' resultString: ', resultString)
 
 		// resultString = resultString.replace(string1, string2)
 		const test = [...nameTitleDes].find(a => a.name === resultString)
-		console.log(' test: ', test)
+		// console.log(' test: ', test)
 		if (test) {
 			return {
 				"name": resultString,
@@ -1425,7 +1369,7 @@ export const impdataBase = (clouARR, nameTitleDes) => {
 				"thumbHot02": "",
 				"thumbHot03": "",
 				"brandId": {
-					"$oid": "694f63ae71e0fa81fc45d9fe"
+					"$oid": "694f535471e0fa81fc45d9f7"
 				},
 				"quantity": getRandomInt(0, 999),
 				"description": test.description
@@ -1433,6 +1377,6 @@ export const impdataBase = (clouARR, nameTitleDes) => {
 		}
 	}
 	)
-	// console.log(' resuil: ', JSON.stringify(resuil))
+	console.log(' resuil: ', JSON.stringify(resuil))
 }
-impdataBase(testttttt, Lystest)
+// impdataBase(testttttt, Lystest)

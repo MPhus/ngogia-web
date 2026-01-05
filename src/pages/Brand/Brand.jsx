@@ -78,13 +78,14 @@ function Brand({ info }) {
 				</Box>
 				<Box sx={{
 					display: 'flex',
-					justifyContent: { xs: 'space-evenly', lg: 'space-between' },
-					padding: { xs: '0 8px', sm: '0 20px' },
 					flexWrap: 'wrap',
-					maxWidth: {
-						md: '1000px',
-						lg: '1200px'
-					},
+
+					// 💡 Thay đổi chính:
+					justifyContent: { xs: 'space-between', sm: 'space-evenly', lg: 'flex-start' }, // 👈 Đảm bảo các item luôn căn lề trái
+					gap: { xs: '12px 16px', lg: '24px 20px' }, // 👈 Dùng gap thay cho khoảng cách giữa các item
+					padding: { xs: '0 8px', sm: '0 20px' },
+					maxWidth: { md: '1000px', lg: '1200px' },
+
 				}}>
 					{brandList && brandList?.map((brand) => {
 						return (
@@ -93,8 +94,9 @@ function Brand({ info }) {
 									navigate(`/brands/${brand?._id}`)
 								}}
 								sx={{
-									minWidth: { xs: '46%', md: '30%', lg: '280px' },
-									maxWidth: { xs: '46%', md: '30%', lg: '280px' },
+									minWidth: { xs: 'calc(50% - 8px)', md: 'calc(33.33% - 13.33px)', lg: 'calc(25% - 15px)' },
+									maxWidth: { xs: 'calc(50% - 8px)', md: 'calc(33.33% - 13.33px)', lg: 'calc(25% - 15px)' },
+									// Bỏ thuộc tính m: { xs: '12px 0', sm: '20px 0', lg: '12px 0' } vì đã có gap
 									minHeight: { xs: 'unset', md: 'unset', lg: '180px' },
 									maxHeight: { xs: 'unset', md: 'unset', lg: '180px' },
 									m: { xs: '12px 0', sm: '20px 0', lg: '12px 0' },

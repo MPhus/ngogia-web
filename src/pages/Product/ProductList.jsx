@@ -42,22 +42,18 @@ function ProductList({ products }) {
 			padding: '0'
 		}}>
 			<Box sx={{
-				maxWidth: {
-					md: '1000px',
-					lg: '1200px'
-				},
 				'& a': {
 					textDecoration: 'none'
 				},
 				m: '0 auto',
 				display: 'flex',
-				justifyContent: { xs: 'space-evenly', lg: 'space-between' },
-				// padding: '0 20px',
 				flexWrap: 'wrap',
-				maxWidth: {
-					md: '1000px',
-					lg: '1200px'
-				},
+
+				// 💡 Thay đổi chính:
+				justifyContent: { xs: 'space-between', sm: 'space-evenly', lg: 'flex-start' }, // 👈 Đảm bảo các item luôn căn lề trái
+				gap: { xs: '12px 16px', lg: '24px 20px' }, // 👈 Dùng gap thay cho khoảng cách giữa các item
+				padding: { xs: '0 8px', sm: '0 20px' },
+				maxWidth: { md: '1000px', lg: '1200px' },
 			}}>
 				{isEmpty(products) && <Box sx={{ p: '28px 0' }}>
 					<Typography variant='h5' sx={{ color: '#000' }}>Chưa có sản phẩm</Typography>
@@ -69,8 +65,9 @@ function ProductList({ products }) {
 						key={item._id}
 						sx={{
 							overflow: 'hidden',
-							minWidth: { xs: '45%', sm: '280px' },
-							maxWidth: { xs: '45%', sm: '280px' },
+							minWidth: { xs: 'calc(50% - 8px)', md: 'calc(33.33% - 13.33px)', lg: 'calc(25% - 15px)' },
+							maxWidth: { xs: 'calc(50% - 8px)', md: 'calc(33.33% - 13.33px)', lg: 'calc(25% - 15px)' },
+							// Bỏ thuộc tính m: { xs: '12px 0', sm: '20px 0', lg: '12px 0' } vì đã có gap
 							minHeight: { xs: 'auto', sm: '440px' },
 							maxHeight: { xs: 'auto', sm: '440px' },
 							backgroundColor: '#fff',
