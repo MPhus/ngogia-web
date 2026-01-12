@@ -58,11 +58,11 @@ function Footer({ data }) {
 							<Typography variant="h6" sx={{ fontWeight: 'bold' }}> Shop</Typography>
 							<Link to="/" >Sản phẩm mới.</Link>
 							<Link to="/" >Dành cho mặt.</Link>
-							<Link to="/" >Toàn thân</Link>
+							<Link to="/" >Toàn thâ.</Link>
 							<Link to="/" >Sản phẩm vệ sinh.</Link>
 						</Box>
 						<Box sx={{ display: 'flex', flexDirection: 'column', width: '200px', mb: '20px' }}>
-							<Typography variant="h6" sx={{ fontWeight: 'bold' }}> Về Ngô Gia</Typography>
+							<Typography variant="h6" sx={{ fontWeight: 'bold' }}> Về NGÔ GIA</Typography>
 							<Link to="/" >Câu chuyện thương hiệu</Link>
 							<Link to="/" >Giá trị cốt lõi</Link>
 							<Link to="/" >Trách nhiệm cộng đồng</Link>
