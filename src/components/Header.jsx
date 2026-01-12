@@ -91,7 +91,7 @@ function Header() {
 					minWidth: '320px',
 				}}>
 					<Link to="/brands" >Nhãn hàng</Link>
-					<Link to="/overview" >Ngô Gia</Link>
+					<Link to="/overview" >NGÔ GIA</Link>
 					<Link to="/product" >Sản Phẩm</Link>
 				</Box>
 
@@ -372,7 +372,7 @@ function Header() {
 												}
 											}}
 										>
-											Gửi Ngô Gia
+											Gửi NGÔ GIA
 										</Button>
 										<Button
 											onClick={() => handleCloseContact()}
@@ -393,7 +393,7 @@ function Header() {
 												}
 											}}
 										>
-											Gọi cho Ngô Gia
+											Gọi cho NGÔ GIA
 										</Button>
 									</Box>
 								</Box>
@@ -544,7 +544,7 @@ function Header() {
 							pb: 2
 						}}
 					>
-						© Ngô Gia since 2009
+						© NGÔ GIA since 2009
 					</Box>
 				</MenuList>
 			</Drawer>
