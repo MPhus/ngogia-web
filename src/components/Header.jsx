@@ -138,7 +138,7 @@ function Header() {
 						}}
 					>
 						<DialogTitle sx={{ color: '#000', fontSize: '1.6rem' }}>
-							Liên hệ với Ngô gia
+							Liên hệ với NGÔ GIA
 							<Tooltip title="Đóng ">
 								<CloseIcon onClick={() => setOpenContact(false)} sx={{ position: 'absolute', top: '8px', right: '8px', cursor: 'pointer' }} />
 							</Tooltip>
