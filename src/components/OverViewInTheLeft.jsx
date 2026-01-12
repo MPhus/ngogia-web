@@ -72,7 +72,7 @@ function OverViewInTheLeft({ data, isRight, setting, isBrand }) {
 					fontSize: '16px',
 					letterSpacing: '0.5px',
 					textAlign: 'justify',
-					fontFamily: 'fontPE',
+					fontFamily: "Arial",
 					m: '8px 0',
 					overflow: 'hidden'
 				}

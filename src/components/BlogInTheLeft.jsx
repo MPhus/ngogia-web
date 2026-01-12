@@ -73,7 +73,7 @@ function BlogInTheLeft({ data, darkTheme, setting }) {
 				'& .MuiTypography-root.MuiTypography-body1': {
 					fontSize: '16px',
 					letterSpacing: '0.5px',
-					fontFamily: 'fontPE',
+					fontFamily: "Arial",
 					m: '8px 0',
 					overflow: 'hidden'
 				}

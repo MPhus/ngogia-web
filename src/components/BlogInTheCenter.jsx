@@ -67,12 +67,12 @@ function BlogInTheCenter({ data, darkTheme, setting }) {
 						xs: '20px 0',
 						md: '32px 0'
 					},
-					fontFamily: 'fontPE'
+					fontFamily: "Arial"
 				},
 				'& .MuiTypography-root.MuiTypography-body1': {
 					fontSize: '16px',
 					letterSpacing: '2px',
-					fontFamily: 'fontPE',
+					fontFamily: "Arial",
 					mb: {
 						xs: '8px',
 						md: '16px'
