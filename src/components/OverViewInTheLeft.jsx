@@ -52,7 +52,7 @@ function OverViewInTheLeft({ data, isRight, setting, isBrand }) {
 					xs: 'center',
 					lg: 'left'
 				},
-				fontFamily: 'fontCustom',
+				fontFamily: "Arial",
 				flex: {
 					xs: '1 1 100%'
 				},

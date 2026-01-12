@@ -51,7 +51,7 @@ function BlogInTheLeft({ data, darkTheme, setting }) {
 					xs: 'center',
 					lg: 'left'
 				},
-				fontFamily: 'fontCustom',
+				fontFamily: "Arial",
 				flex: {
 					xs: '1 1 100%',
 					lg: '0 0 50%'
