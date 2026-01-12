@@ -35,7 +35,7 @@ function LinkBrands({ data }) {
 				Thấu hiểu làn da - Lan tỏa vẻ đẹp VIỆT
 			</Typography>
 			<Typography variant="h2" sx={{ color: '#95cbe7' }}>
-				tự nhiên,	khỏe mạnh theo cách riêng của người Việt.
+				tự nhiên,	khỏe mạnh theo cách riêng của người VIỆT.
 			</Typography>
 			<Button
 				onClick={() => natigate('/brands')}
