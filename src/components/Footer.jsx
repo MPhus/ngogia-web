@@ -93,7 +93,7 @@ function Footer({ data }) {
 							my: '12px'
 						},
 					}}>
-						<Typography variant="h5">Công ty TNHH MTV Ngô Gia
+						<Typography variant="h5">Công ty TNHH MTV NGÔ GIA
 						</Typography>
 						<Typography variant="body1">
 							Địa chỉ: 9/12, Sông Hậu, TP Cần Thơ, Việt Nam. Hotline: 02923. 763 345 / 077 9889 800. Email: ngogiacantho@gmail.com

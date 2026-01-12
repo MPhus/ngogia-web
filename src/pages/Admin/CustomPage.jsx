@@ -28,12 +28,13 @@ import { isEmpty } from 'lodash'
 // import SettingSlide from '~/components/CustomPage/HomePage/SettingSlide/SettingSlide'
 // import CustomOrtherPage from '~/components/CustomPage/OrtherPage/CustomOrtherPage'
 import { toast } from 'react-toastify'
-import { API_GetHomePage } from '~/apis'
-import SettingHomePage from './SettingHomePage'
+import { API_GetHomePage, API_GetAllBrand } from '~/apis'
+import SettingHomePage from './HomePage/SettingHomePage'
+import SettingBrandPage from './BrandPage/SettingBrandPage'
 const CustomPage = memo(({ type }) => {
 
 	const [homePage, setHomePage] = useState(undefined)
-	const [storeTop, setStoreTop] = useState(undefined)
+	const [brandPage, setBrandPage] = useState(undefined)
 	const [storeBottom, setStoreBottom] = useState(undefined)
 	const [otherPage, setOtherPage] = useState(undefined)
 	console.log(' type: ', type)
@@ -46,9 +47,10 @@ const CustomPage = memo(({ type }) => {
 					)
 
 				break
-				// case 'Trang sản phẩm':
-				// 	fetchStorePage_API(slug, 'top').then(data => setStoreTop(data?.topSlide))
-				// 	fetchStorePage_API(slug, 'bottom').then(data => setStoreBottom(data?.bottomSlide))
+			case 'Trang Nhãn Hàng':
+				API_GetAllBrand('').then(data => setBrandPage(data))
+					.catch(err => console.log('err brand page:', err)
+					)
 
 				break
 				// case 'Trang Blog':
@@ -64,7 +66,7 @@ const CustomPage = memo(({ type }) => {
 		return () => {
 			setHomePage(undefined)
 			setStoreBottom(undefined)
-			setStoreTop(undefined)
+			setBrandPage(undefined)
 			setOtherPage(undefined)
 		}
 	}, [type])
@@ -124,6 +126,17 @@ const CustomPage = memo(({ type }) => {
 						<Typography variant='h2'>Trang chủ</Typography>
 						<Box>
 							<SettingHomePage homePage={homePage} />
+							{/* <SettingIntro page={homePage} updateNews={updateNews} slug={slug} />
+							<ProductSlide page={homePage} updateHomePage={updateHomePage} slug={slug} />
+							<SettingAbout page={homePage} updateNews={updateNews} slug={slug} /> */}
+						</Box>
+					</Box>
+				}
+				{brandPage &&
+					<Box>
+						<Typography variant='h2'>Trang nhãn hàng</Typography>
+						<Box>
+							<SettingBrandPage brandPage={brandPage} />
 							{/* <SettingIntro page={homePage} updateNews={updateNews} slug={slug} />
 							<ProductSlide page={homePage} updateHomePage={updateHomePage} slug={slug} />
 							<SettingAbout page={homePage} updateNews={updateNews} slug={slug} /> */}

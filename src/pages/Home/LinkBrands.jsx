@@ -32,7 +32,7 @@ function LinkBrands({ data }) {
 				Mỗi thương hiệu NGÔ GIA là một hành trình
 			</Typography>
 			<Typography variant="h2" sx={{ color: '#6ddc90' }}>
-				Thấu hiểu làn da, nhằm lan tỏa vẻ đẹp VIỆT
+				Thấu hiểu làn da - lan tỏa vẻ đẹp VIỆT
 			</Typography>
 			<Typography variant="h2" sx={{ color: '#95cbe7' }}>
 				tự nhiên,	khỏe mạnh theo cách riêng của người Việt.
