@@ -10,10 +10,13 @@ import { PRODUCT_LIST_MOCK } from '~/apis/mockdata'
 import InputAdornment from '@mui/material/InputAdornment'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
 import SearchIcon from '@mui/icons-material/Search'
-
+import { useLocation } from "react-router-dom"
 import TextField from '@mui/material/TextField'
 import { API_GetAllBrand, API_getProduct } from '~/apis'
-function Product({ brandId, info }) {
+function Product({ info }) {
+	const { state } = useLocation()
+
+	const { brandId } = state || {}
 	const [searchtext, setSearchtext] = useState('')
 	const [filter, setFilter] = useState({
 		page: 1,
@@ -25,6 +28,8 @@ function Product({ brandId, info }) {
 		isGetSoldOut: false
 
 	})
+
+
 
 	const [products, setProducts] = useState([])
 	const [closeIcon, setCloseIcon] = useState('')
