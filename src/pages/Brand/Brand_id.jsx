@@ -42,7 +42,7 @@ function Brand_id({ info }) {
 
 			<Box sx={{ m: blogId?.thumb ? '40px 0' : '120px 0 40px 0 ' }}>
 				{blogId?.des && blogId?.des?.map((data, index) => <Box key={data?._id} >
-					<OverViewInTheLeft data={{ ...data, logo: blogId?.logo }} isRight={index % 2} isBrand={blogId?.logo && !index % 2} />
+					<OverViewInTheLeft data={{ ...data, logo: blogId?.logo, color: blogId?.color }} isRight={index % 2} isBrand={blogId?.logo && !index % 2} />
 				</Box>
 				)}
 			</Box>
@@ -56,7 +56,7 @@ function Brand_id({ info }) {
 			}}>
 				<Typography variant="h3"
 					sx={{
-						color: 'primary.main',
+						color: blogId.color ? blogId.color : 'primary.main',
 						p: '0 20px',
 						fontSize: { xs: '2rem', sm: '3rem ' }
 

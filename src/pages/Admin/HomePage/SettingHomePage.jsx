@@ -14,6 +14,8 @@ import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload'
 import { toast } from 'react-toastify'
 import SettingThumb from '../SettingThumb'
 import SettingHomeOverview from './SettingHomeOverview'
+import SettingHomeBrandList from './SettingHomeBrandList'
+import SettingHomeFallText from './SettingHomeFallText'
 
 
 const SettingHomePage = memo(({ homePage }) => {
@@ -394,7 +396,9 @@ const SettingHomePage = memo(({ homePage }) => {
 			{/* {homePage && <SettingHotProduct thumb={homePage.slide} updateSlide={test} />} */}
 			<Box>Hot product</Box>
 			{homePage && <SettingHomeOverview homeOverview={{ thumb: homePage.bgOverview, subcontent: homePage.overview.subcontent, title: homePage.overview.title }} />}
-			{homePage && <SettingThumb thumb={homePage.bgReviewBrand} />}
+			{homePage && <SettingHomeFallText falltext={homePage.fallText} />}
+			{homePage && <SettingHomeBrandList homeBrandList={homePage.reviewBrand} />}
+
 		</Box>
 	)
 })

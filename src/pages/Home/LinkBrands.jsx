@@ -29,13 +29,13 @@ function LinkBrands({ data }) {
 			}
 		}} >
 			<Typography variant="h2" sx={{ color: '#fff' }}>
-				Mỗi thương hiệu NGÔ GIA là một hành trình
+				{data?.contentWhite}
 			</Typography>
 			<Typography variant="h2" sx={{ color: '#6ddc90' }}>
-				Thấu hiểu làn da - Lan tỏa vẻ đẹp VIỆT
+				{data?.contentGreen}
 			</Typography>
 			<Typography variant="h2" sx={{ color: '#95cbe7' }}>
-				tự nhiên,	khỏe mạnh theo cách riêng của người VIỆT.
+				{data?.contentBlue}
 			</Typography>
 			<Button
 				onClick={() => natigate('/brands')}
@@ -60,7 +60,7 @@ function LinkBrands({ data }) {
 		<Box sx={{ flex: { xs: 'unset', xl: '0 0 50%' }, m: { xs: '0 -80px', xl: 'unset' } }}>
 			<Box
 				component="img"
-				src={data}
+				src={data?.thumb}
 				sx={{ height: { xs: 'auto', xl: '100%' }, width: '100%' }}
 			/>
 

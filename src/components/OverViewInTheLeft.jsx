@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography'
 import useContentTruncation from './useContentTruncation' // Import hook mới
 
 function OverViewInTheLeft({ data, isRight, setting, isBrand }) {
+	console.log(' data: ', data)
 	const { contents, isShowMoreButton, handleShowAllContent } = useContentTruncation(data.content)
 
 	return (
@@ -64,7 +65,7 @@ function OverViewInTheLeft({ data, isRight, setting, isBrand }) {
 					},
 					lineHeight: '44px',
 					letterSpacing: '2px',
-					color: 'primary.main',
+					color: data.color ? data.color : 'primary.main',
 					mb: '16px'
 				},
 
@@ -85,16 +86,16 @@ function OverViewInTheLeft({ data, isRight, setting, isBrand }) {
 						display: !data.title ? 'block' : 'none'
 					}}
 				/>
-				<Typography variant="h1">{data.title}</Typography>
-				<Box>
+				<Typography variant="h1" >{data.title}</Typography>
+				<Box >
 					{contents?.map((content, index) => (
 						<Typography
 							variant="body1"
 							component="p"
 							key={index}
-						>
-							{content}
-						</Typography>
+							dangerouslySetInnerHTML={{ __html: content }}
+						/>
+
 					))}
 					{/* Sửa isShow thành isShowMoreButton */}
 					{isShowMoreButton && (

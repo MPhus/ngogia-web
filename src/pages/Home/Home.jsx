@@ -34,7 +34,7 @@ function Home({ info }) {
 				<HotProduct data={homePage?.hotProduct} />
 				<LinkOverView data={{ ...homePage?.overview, bgOverview: homePage?.bgOverview }} />
 				<MarqueeText data={homePage?.fallText} />
-				<LinkBrands data={homePage?.bgReviewBrand} />
+				<LinkBrands data={homePage?.reviewBrand} />
 				<LinkNews dataList={hotNews} />
 				<Footer data={info} />
 			</Box>}
