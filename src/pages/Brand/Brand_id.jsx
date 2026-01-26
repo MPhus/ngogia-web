@@ -95,7 +95,7 @@ function Brand_id({ info }) {
 							}
 						}} endIcon={< EastIcon sx={{ fontSize: '1rem' }} />}
 						onClick={handleGo}
-					>Xem thêm các sản phẩm khác </Button>
+					>Các sản phẩm khác của&nbsp; <strong>{blogId?.name}</strong></Button>
 				</Box>
 
 				{productList && <ProductList products={productList?.data} />}
