@@ -111,7 +111,7 @@ function Brand({ info }) {
 										borderBottom: 'none'
 									},
 									'& .MuiCardMedia-root': {
-										backgroundColor: 'secondary.main',
+										backgroundColor: brand.bgColor,
 										p: '12px 20px',
 									}
 								}} >
