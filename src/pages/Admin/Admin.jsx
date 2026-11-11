@@ -27,8 +27,7 @@ import Avatar from '@mui/material/Avatar'
 // import Statistic from '~/components/Statistic/Statistic'
 // import CustomPage from '~/components/CustomPage/CustomPage'
 // import CustomDate from '~/untils/'
-import authorizedAxiosIntance from '~/untils/authorizedAxios'
-import axios from 'axios'
+import { API_getCurrentUser, handleLogoutAPI } from '~/apis'
 // import UpdateStore from '~/components/UpdateStore/UpdateStore'
 // import { UpdateWeb_API, getUserById_API, handleLogoutAPI, updateDetailUser_API } from '~/apis/index'
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Tooltip } from '@mui/material'
@@ -72,9 +71,13 @@ function Admin() {
 
 	useEffect(() => {
 		const testAccess = async () => {
-			const res = await authorizedAxiosIntance.get(`http://localhost:3000/v1/users/accesstoken`)
-
-			setUser(res.data)
+			const currentUser = await API_getCurrentUser()
+			if (!currentUser) {
+				localStorage.removeItem(`userInfo`)
+				navigate(`/login`)
+				return
+			}
+			setUser(currentUser)
 		}
 		testAccess()
 		// document.querySelector('link[rel="icon"]').href = 'https://res.cloudinary.com/dwa6hiofs/image/upload/v1722253234/376248141_609292971392775_7616707295223113086_n_lqcbsv.jpg'
