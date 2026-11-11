@@ -2,20 +2,20 @@ import { Alert, Box, Button, CardActions, SvgIcon, TextField, Typography, Zoom }
 import { Card as MuiCard } from '@mui/material'
 import { useForm } from 'react-hook-form'
 
-import authorizedAxiosIntance from '~/untils/authorizedAxios'
+import { toast } from 'react-toastify'
+import { API_login } from '~/apis'
 import { useNavigate } from 'react-router-dom'
 function Login({ }) {
 	const { register, handleSubmit, formState: { errors } } = useForm()
 	const navigate = useNavigate()
 	const submitLogIn = async (data) => {
-		const res = await authorizedAxiosIntance.post(`http://localhost:3000/v1/users/login`, data)
-		const userInfo = {
-			id: res.data.id,
-			email: res.data.email,
+		try {
+			const userInfo = await API_login(data.email, data.password)
+			localStorage.setItem(`userInfo`, JSON.stringify(userInfo))
+			navigate(`/admin`)
+		} catch (error) {
+			toast.error('Email hoặc mật khẩu không chính xác!', { position: 'top-center' })
 		}
-		localStorage.setItem(`userInfo`, JSON.stringify(userInfo))
-
-		navigate(`/admin`)
 	}
 	return (
 		<Box sx={{
